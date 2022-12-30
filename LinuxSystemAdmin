@@ -1,0 +1,41 @@
+ping the public dns of google with one packet	ping -c 1 8.8.8.8
+list the content of the current directory	ls
+list the content (as list) of the /etc/ repo	ls -l /etc/
+combine the short options in : ls -l -a	ls -la
+list the content of the current directory (hidden files included)	ls -a
+open the manual for the ls command	man ls
+Navigate into a terminal file go to the beginning : ? go to the end : ? go forward : ? go backward : ?	g G Ctrl + F Ctrl + B
+"In man pages. search ""text"" from the beginning : ? search ""text"" from the end : ? go forward in the result : ? go backward in the result : ?"	/text ?text n N
+display the path of the df command	type df
+show the help for shell builtin command (like cd)	help cd
+show help for both shell builtin and executable file commands	"""command name"" --help"
+search for a specific action among the existing commands	"man -k ""command name"""
+search all command enabling to copy files	"man -k ""copy files"""
+"show all commands starting with ""if"""	"type ""if"" and DOUBLE TAB key"
+"show all directories and files starting by ""pa"" in the etc directory"	ls /etc/pa and DOUBLE press TAB key
+open the bash history file	cat .bash_history
+show the max num of line in bash history file	echo $HISTFILESIZE
+show bash history file with line number	history
+show the max line number for the history command	echo $HISTSIZE
+run the command of the line 25of the memory history file	!25
+run the previous command (2 ways)	up arrow !!
+"search the last 'ping' command in the history and run it"	!ping
+"print the last 'ping' command from the history"	!ping:p
+find a command in the history	Ctrl R + type the researched command
+leave the history searching mode	ctrl G
+delete the command in the history at line 50	history -d 50
+clear all history	history -c
+"write the value 'ignoreboth' in the variable HISTCONTROL and save it in the .bashrc file"	"echo ""HISTCONTROL=ignoreboth"" >> .bashrc"
+Add the time and date for each command in history and made this setting persistent	"echo ""HISTTIMEFORMAT=""%d/%m/%y %T"""" >> .bashrc"
+3 words for define a full privileges user	root, superuser, administrator
+How give root access in the terminal	sudo su (superuser do substitute user)
+Get info on actual user	id
+how to logout (2 ways)	exist ctrl D
+activate the root working environment	sudo su -
+run a command as root	"sudo ""command"""
+how to flush the sudo password caching system (by default password is cached for 5 minutes after each sudo command)	sudo -k
+change the password for root user	sudo passwd root
+Show the content of root directory	ls /
+show the content of root home directory of the user	ls /root/
+where are located root directory of others users	/home
+run command with no traces (2 ways)	put a space before the command (ubuntu) set HISTCONTROL variable to ignorespace, then put a space before the command
