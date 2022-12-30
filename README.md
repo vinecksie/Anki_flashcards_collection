@@ -6,10 +6,5 @@ Anki is a program which makes remembering things easy. Because it's a lot more e
 Anyone who needs to remember things in their daily life can benefit from Anki. Since it is content-agnostic and supports images, audio, videos and scientific markup (via LaTeX), the possibilities are endless.
 For example:
 
-Learning a language
-Studying for medical and law exams
-Memorizing people's names and faces
-Brushing up on geography
-Mastering long poems
-Even learning new DevOps skills!
+Learning a language, studying for medical and law exams, brushing up on geographey, even learning new DevOps skills!
 
