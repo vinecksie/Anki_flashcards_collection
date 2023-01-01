@@ -1,41 +1,65 @@
-ping the public dns of google with one packet	ping -c 1 8.8.8.8
-list the content of the current directory	ls
-list the content (as list) of the /etc/ repo	ls -l /etc/
-combine the short options in : ls -l -a	ls -la
-list the content of the current directory (hidden files included)	ls -a
-open the manual for the ls command	man ls
-Navigate into a terminal file go to the beginning : ? go to the end : ? go forward : ? go backward : ?	g G Ctrl + F Ctrl + B
-"In man pages. search ""text"" from the beginning : ? search ""text"" from the end : ? go forward in the result : ? go backward in the result : ?"	/text ?text n N
-display the path of the df command	type df
-show the help for shell builtin command (like cd)	help cd
-show help for both shell builtin and executable file commands	"""command name"" --help"
-search for a specific action among the existing commands	"man -k ""command name"""
-search all command enabling to copy files	"man -k ""copy files"""
-"show all commands starting with ""if"""	"type ""if"" and DOUBLE TAB key"
-"show all directories and files starting by ""pa"" in the etc directory"	ls /etc/pa and DOUBLE press TAB key
-open the bash history file	cat .bash_history
-show the max num of line in bash history file	echo $HISTFILESIZE
-show bash history file with line number	history
-show the max line number for the history command	echo $HISTSIZE
-run the command of the line 25of the memory history file	!25
-run the previous command (2 ways)	up arrow !!
-"search the last 'ping' command in the history and run it"	!ping
-"print the last 'ping' command from the history"	!ping:p
-find a command in the history	Ctrl R + type the researched command
-leave the history searching mode	ctrl G
-delete the command in the history at line 50	history -d 50
-clear all history	history -c
-"write the value 'ignoreboth' in the variable HISTCONTROL and save it in the .bashrc file"	"echo ""HISTCONTROL=ignoreboth"" >> .bashrc"
-Add the time and date for each command in history and made this setting persistent	"echo ""HISTTIMEFORMAT=""%d/%m/%y %T"""" >> .bashrc"
-3 words for define a full privileges user	root, superuser, administrator
-How give root access in the terminal	sudo su (superuser do substitute user)
-Get info on actual user	id
-how to logout (2 ways)	exist ctrl D
-activate the root working environment	sudo su -
-run a command as root	"sudo ""command"""
-how to flush the sudo password caching system (by default password is cached for 5 minutes after each sudo command)	sudo -k
-change the password for root user	sudo passwd root
-Show the content of root directory	ls /
-show the content of root home directory of the user	ls /root/
-where are located root directory of others users	/home
-run command with no traces (2 ways)	put a space before the command (ubuntu) set HISTCONTROL variable to ignorespace, then put a space before the command
+ping the public dns of google with one packet	ping -c 1 8.8.8.8	
+list the content of the current directory	ls	
+list the content (as list) of the /etc/ repo	ls -l /etc/	
+combine the short options in : ls -l -a	ls -la	
+list the content of the current directory (hidden files included)	ls -a	
+open the manual for the ls command	man ls	
+Navigate into a terminal file<br>go to the beginning : ?<br>go to the end : ?<br>go forward : ?<br>go backward : ?	g<br>G<br>Ctrl + F<br>Ctrl + B	
+"In man pages.<br>search ""text"" from the beginning : ?<br>search ""text"" from the end : ?<br>go forward in the result : ?<br>go backward in the result : ?"	/text<br>?text<br>n<br>N	
+display the path of the df command	type df	
+show the help for shell builtin command (like cd)	help cd	
+show help for both shell builtin and executable file commands	"""command name"" --help"	
+search for a specific action among the existing commands	"man -k ""command name"""	
+search all command enabling to copy files	"man -k ""copy files"""	
+"show all commands starting with ""if"""	"type ""if"" and DOUBLE TAB key"	
+"show all directories and files starting by ""pa"" in the etc directory"	ls /etc/pa and DOUBLE press TAB key	
+open the bash history file	cat .bash_history	
+show the max num of line in bash history file	echo $HISTFILESIZE	
+show bash history file with line number	history	
+show the max line number for the history command	echo $HISTSIZE	
+run the command of the line 25of the memory history file	!25	
+run the previous command (2 ways)	up arrow<br>!!	
+"search the last 'ping' command in the history and run it"	!ping	
+"print the last 'ping' command from the history"	!ping:p	
+find a command in the history	Ctrl R + type the researched command	
+leave the history searching mode	ctrl G	
+delete the command in the history at line 50	history -d 50	
+clear all history	history -c	
+"write the value 'ignoreboth' in the variable HISTCONTROL and save it in the .bashrc file"	"echo ""HISTCONTROL=ignoreboth"" &gt;&gt; .bashrc"	
+Add the time and date for each command in history and made this setting persistent	"echo ""HISTTIMEFORMAT=""%d/%m/%y %T"""" &gt;&gt; .bashrc"	
+3 words for define a full privileges user	root, superuser, administrator	
+How give root access in the terminal	sudo su (superuser do substitute user)	
+Get info on actual user	id	
+how to logout (2 ways)	exist<br>ctrl D	
+activate the root working environment	sudo su -	
+run a command as root	"sudo ""command"""	
+how to flush the sudo password caching system (by default password is cached for 5 minutes after each sudo command)	sudo -k	
+change the password for root user	sudo passwd root	
+Show the content of root directory	ls /	
+show the content of root home directory of the user	ls /root/	
+where are located root directory of others users	/home	
+run comman with no traces (2 ways)	put a space before the command (ubuntu)<br>set HISTCONTROL variable to ignorespace, then put a space before the command	
+&nbsp;A .... controls how date is stored and retrieved	file system	
+On Linux, .... is considered to be a file<br>On Linux, file and directory name are .....	everything<br>case-sensitive	
+.... is the word used to the early period of file system<br>.... is more used bu Windows users<br>Both are interchangeable	Directory<br>Folder	
+.... defines the structure and the directory content for a Linux Distribution	Filesystem Hierarchy Standard (FHS)	
+.... contains binaries or exe available to all users	/bin	
+... contains apps that only root will need	/sbin	
+... contains files required for starting the system	/boot	
+"... where you will find all users' home directories<br>root has its home directory separated in ...."	/home<br>/root	
+... contains device files	/dev	
+... contains all system-wide configuration files	/etc	
+... contains shared library files used by apps	/lib	
+... used for external storage automatically mounted<br>... is like media but not very often used	/media<br>/mnt	
+Every files and directories appears under the root directory even if they are stored ....	on different physical disks	
+"2 ways to show the content of the user's home directory"	ls ~<br>ls /home/username	
+... contains temporary files&nbsp;	/tmp	
+... is a virtual directory. It contains informations about computer hardware,&nbsp;	/proc	
+... contains informations about devices, drivers, kernel features	/sys	
+... contains datas for servers	/srv	
+... : fairly new. Contain temp file when the system reboots. This directory is used only by processes.	/run	
+"... was the initial user's home directory in the early versions. In CentOs, many commands are stored in this directory instead of /bin and /sbin directories."	/usr	
+... contains variables files such as logs users.	/var	
+command for change the directory where we are	cd	
+take the user in the /etc directory	cd /etc	
+Which directory I am in	pwd (print working directory)	
