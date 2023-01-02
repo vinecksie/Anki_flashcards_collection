@@ -1,0 +1,117 @@
+ping the public dns of google with one packet	ping -c 1 8.8.8.8
+list the content of the current directory	ls
+list the content (as list) of the /etc/ repo	ls -l /etc/
+combine the short options in : ls -l -a	ls -la
+list the content of the current directory (hidden files included)	ls -a
+open the manual for the ls command	man ls
+Navigate into a terminal file go to the beginning : ? go to the end : ? go forward : ? go backward : ?	g G Ctrl + F Ctrl + B
+"In man pages. search ""text"" from the beginning : ? search ""text"" from the end : ? go forward in the result : ? go backward in the result : ?"	/text ?text n N
+display the path of the df command	type df
+show the help for shell builtin command (like cd)	help cd
+show help for both shell builtin and executable file commands	"""command name"" --help"
+search for a specific action among the existing commands	"man -k ""command name"""
+search all command enabling to copy files	"man -k ""copy files"""
+"show all commands starting with ""if"""	"type ""if"" and doube type TAB"
+"show all directories and files starting by ""pa"" in the etc directory"	ls /etc/pa and DOUBLE press TAB key
+open the bash history file	cat .bash_history
+show the max num of line in bash history file	echo $HISTFILESIZE
+show bash history file with line number	history
+show the max line number for the history command	echo $HISTSIZE
+run the command of the line 25of the memory history file	!25
+run the previous command (2 ways)	up arrow !!
+"search the last 'ping' command in the history and run it"	!ping
+"print the last 'ping' command from the history"	!ping:p
+find a command in the history	Ctrl R + type the researched command
+leave the history searching mode	ctrl G
+delete the command in the history at line 50	history -d 50
+clear all history	history -c
+"write the value 'ignoreboth' in the variable HISTCONTROL and save it in the .bashrc file"	"echo ""HISTCONTROL=ignoreboth"" >> .bashrc"
+Add the time and date for each command in history and made this setting persistent	"echo ""HISTTIMEFORMAT=""%d/%m/%y %T"""" >> .bashrc"
+3 words for define a full privileges user	root, superuser, administrator
+How give root access in the terminal	sudo su (superuser do substitute user)
+Get info on actual user	id
+how to logout (2 ways)	exist ctrl D
+activate the root working environment	sudo su -
+run a command as root	"sudo ""command"""
+how to flush the sudo password caching system (by default password is cached for 5 minutes after each sudo command)	sudo -k
+change the password for root user	sudo passwd root
+Show the content of root directory (shortest manner)	ls /
+show the content of root home directory (shortest manner)	ls /root/
+where are located root directory of others users	/home
+run comman with no traces (2 ways)	put a space before the command (ubuntu) set HISTCONTROL variable to ignorespace, then put a space before the command
+A .... controls how date is stored and retrieved	file system
+On Linux, .... is considered to be a file On Linux, file and directory name are .....	everything case-sensitive
+.... is the word used to the early period of file system .... is more used bu Windows users Both are interchangeable	Directory Folder
+.... defines the structure and the directory content for a Linux Distribution	Filesystem Hierarchy Standard (FHS)
+.... contains binaries or exe available to all users	/bin
+... contains apps that only root will need	/sbin
+... contains files required for starting the system	/boot
+"... where you will find all users' home directories root has its home directory separated in ...."	/home /root
+... contains device files	/dev
+... contains all system-wide configuration files	/etc
+... contains shared library files used by apps	/lib
+... used for external storage automatically mounted ... is like media but not very often used	/media /mnt
+Every files and directories appears under the root directory even if they are stored ....	on different physical disks
+"2 ways to show the content of the user's home directory"	ls ~ ls /home/username
+... contains temporary files	/tmp
+... is a virtual directory. It contains informations about computer hardware,	/proc
+... contains informations about devices, drivers, kernel features	/sys
+... contains datas for servers	/srv
+... : fairly new. Contain temp file when the system reboots. This directory is used only by processes.	/run
+"... was the initial user's home directory in the early versions. In CentOs, many commands are stored in this directory instead of /bin and /sbin directories."	/usr
+... contains variables files such as logs users.	/var
+command for change the directory where we are	cd
+take the user in the /etc directory	cd /etc
+Which directory I am in	pwd (print working directory)
+What is a path ?	"It's a unique location of a file in a file system, on a OS."
+Two types of paths in Linux ?	"Absolute : specify the location of a file from root directory. start with a ""/"" Relative : specify the location of a file from current directory. NEVER start with ""/"""
+current directory ?	.
+parent directory ?	..
+"you are in the /etc directory, write two ways to show the content of the ""hosts"" file"	cat hosts cat ./hosts
+"Using ""cd"", how to move to my current user directory (2 ways)"	cd cd ~
+show the content of the parent directory	ls ..
+"Show the content of the root directory, since the user's home directory"	ls ../..
+Show the content of a directory as a treeview	tree
+print only the directories of a path in a tree view	"tree -d ""path"""
+Print files and directories of a directory with absolute paths	"tree -f ~ ""pathname"""
+show the content of current directory as form as list	ls -1
+show the content of /etc and /var directories	ls /etc /var
+show the content of /etc directory with the long format option	ls -l /etc
+show information of the current directory with the long format option	ls -l
+"List content of current directory with a more readable view for the file's size"	ls -lh
+With which character start each hidden file ?	.
+list current directory file with hidden files and long format	ls -al
+list current directory files sorting by size desc and long format	ls -lS
+Show the real size of the /etc directory	du -sh /etc/ (disk usage)
+show current directory files as a list sorted by extension asc	ls -lX
+show content of /etc, except the .conf files	ls --hide=*.conf /etc
+show the content of current directory recursively	ls -lR
+run original ls cmd	\ls
+3 timestamps of each file ?	atime read mtime modified ctime metadata related to this file (permissions, owner changed)
+show timestamp of /etc/passwd file	stat /etc/passwd
+show current directory content with atime	ls -lu
+show current directory content with mtime	ls -lt
+show current directory content with ctime	ls -lc
+list the /etc content with max details about the time	ls -l --full-time /etc
+change the timestamp of a file	"touch ""filename"""
+Update the read time of a file	"touch -a ""filename"""
+update the modified date and time of a file	"touch -m -t 202301021505.23 ""filename"""
+update the read date and the modified time in one commande for a file	"touch -d ""2023-01-02 15:04:10"" ""filename"""
+copy the timestamp of linux.txt file to ubuntu.txt file	touch ubuntu.txt -r linux.txt
+Get detailed infos of a file	"stat ""filename"""
+How to change the change time?	Modify the system data time, then update a file
+get date	date
+get UCT format date	date -u
+list content of current directory by timestamp	ls -lt
+list directory current content sorted by access time (and show this access time)	ls -ltu
+show the access time for each component of actual directory sort by name (default sort)	ls -lu
+"how to reverse the sorting instruction of ""ls -lu"" ? (2 ways)"	ls -lu -r ls -lu --reverse
+In Linux, the .... is not mandatory for each file. The ..... contains informations about the type of the file	extension header
+get infos on a file	"file ""filename"""
+rename the file realestate in crowdfunding	mv realestate crowdfunding
+.... are useful only for graphical applications, when we want to open a file	extensions file
+Where find the type symbol of a file ? (2 ways)	ls and see the first characters of each line ls -F and the ast symbol indicates the type
+type of file (ls symbol / ls -F symbol) : - file ../.. - directory ../.. - socket ../.. - named pipe ../.. - link ../..	file : / directory : d / / socket : s / = named pipe : p / | link : l / @
+show the type of each file in the /run directory	file /run/*
+open a file with line number (c..... method)	"cat -n ""filename"""
+concatenate host file and host.conf file into a new txt file	cat host host.conf > newfile.txt
