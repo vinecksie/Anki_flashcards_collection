@@ -72,12 +72,12 @@ parent directory ?	..
 show the content of the parent directory	ls ..
 "Show the content of the root directory, since the user's home directory"	ls ../..
 Show the content of a directory as a treeview	tree
-print only the directories of a path in a tree view	"tree -d ""path"""
+print only the directories of a path in a tree view	tree -d path
 Print files and directories of a directory with absolute paths	"tree -f ~ ""pathname"""
 show the content of current directory as form as list	ls -1
 show the content of /etc and /var directories	ls /etc /var
 show the content of /etc directory with the long format option	ls -l /etc
-show information of the current directory with the long format option	ls -l
+show content of the current directory with the long format option	ls -l
 "List content of current directory with a more readable view for the file's size"	ls -lh
 With which character start each hidden file ?	.
 list current directory file with hidden files and long format	ls -al
@@ -96,7 +96,7 @@ list the /etc content with max details about the time	ls -l --full-time /etc
 change the timestamp of a file	"touch ""filename"""
 Update the read time of a file	"touch -a ""filename"""
 update the modified date and time of a file	"touch -m -t 202301021505.23 ""filename"""
-update the read date and the modified time in one commande for a file	"touch -d ""2023-01-02 15:04:10"" ""filename"""
+update the read date and the modified time in one commande for a file	"touch -d ""2023-01-02 15:04:10"" filename"
 copy the timestamp of linux.txt file to ubuntu.txt file	touch ubuntu.txt -r linux.txt
 Get detailed infos of a file	"stat ""filename"""
 How to change the change time?	Modify the system data time, then update a file
@@ -126,10 +126,24 @@ print the first ten lines of a file	head filename
 show the 37 first lines of a file	head -n 37 filename
 execute ls command in a loop	watch ls
 execute a command in a loop every 7 seconds and showing the differences	watch -n 7 -d command
-follow in a real time the update of packet exchanged with the web (step 1s)	watch -n 1 -d ifconfig
+follow in a real time (step 1s) the update of packet exchanged with the web and highlight the differences	watch -n 1 -d ifconfig
 create or update a new file	touch filename
 create a new file with a space in the filename (best practice is to avoid space in file names)	"touch ""file name.txt"""
 "create a new directory called 'dir'"	mkdir dir
-create a directory by displaying some details about the operation performing	mkdir -v filename
+create a directory by displaying some details about the operation performing	mkdir -v directory
 create a directory with another directory inside	mkdir dir1/dir2
 create a sub sub directory even if the parent does not exists	mkdir -p first/second/third
+copy password file in another file	cp /etc/passwd ./users.txt
+copy a file by showing info about process	cp -v file1 file2
+copy a file, but ask for a validation before execution	cp -i file1 file2
+ALWAYS use ... key for auto completion	TAB
+copy tree files in a directory	cp file1 file2 file3 directory
+copy the content of /etc in my desktop folder	sudo cp -r /etc ~/Desktop
+"copy a file by preserving the user's ownership and group permissions"	cp -p file1 file2
+move a file to another directory	mv file dir
+move every text file of /etc to your Desktop	mv /etc/*.txt ~/Desktop
+move dir1 directory to dir2 directory	mv /dir1/ /dir2/
+Avoid to overwrite a file when you move one	mv -n file position
+move only files that are newer or missing in the destination (useful in shell script)	mv -u files destination
+rename /etc/a.txt to /etc/abc.txt	mv /etc/a.txt /etc/abc.txt
+move and rename a file at a same time	mv oldname.txt newname.txt
