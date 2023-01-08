@@ -141,7 +141,7 @@ copy password file in another file in the same directory	cp /etc/passwd ./users
 copy a file by showing info about process	cp -v file1 file2	
 copy a file, but ask for a validation before execution	cp -i file1 file2	
 ALWAYS use ... key for auto completion	TAB	
-copy tree files in a directory	cp file1 file2 file3 directory	
+copy three files in a directory	cp file1 file2 file3 directory	
 copy the content of /etc in my desktop folder	sudo cp -r /etc ~/Desktop	
 "copy a file by preserving the user's ownership and group permissions"	cp -p file destination	
 move a file to another directory	mv file dir	
@@ -179,3 +179,14 @@ redirect msg + error msg of tail /etc/passwd /etc/shadow in the SAME file	tail /
 print AND save to a file the result of ifconfig by overwriting the file	ifconfig | tee file.txt	
 print AND save to a file the result of ifconfig by appending the file	ifconfig | tee -a file.txt	
 show the kernel version	uname -r	
+update the db used by locate cmd	sudo update db	
+show the number of directories and files + add infos of the current directory	locate -S	
+"find quicky all file containing ""password"" in their names"	locate password	
+"find quickly ""pass"" only in the basename"	locate -b pass	
+"find quickly a file named exactly 'seahorse.list'"	"locate -b '\seahorse.list'"	
+find all files having shadow in their basename	"locate -b 'shadow'"	
+check if a file REALLY exists (2 ways)	locate -e file<br>locate --existing file	
+find quickly a filename by ignoring case sensitive	locate -i filename	
+find quickly a filename by using a regex	"locate -b -r 'regex'"	
+"display the path to the 'rm' cmd"	which rm	
+"display all the path of 'find' cmd"	which -a find	
