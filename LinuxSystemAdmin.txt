@@ -34,7 +34,7 @@ Add the time and date for each command in history and made this setting persiste
 3 words for define a full privileges user	root, superuser, administrator	
 How give root access in the terminal	sudo su (superuser do substitute user)	
 Get info on actual user	id	
-how to logout (2 ways)	exist ctrl D	
+how to logout (2 ways)	exit ctrl D	
 activate the root working environment	sudo su -	
 run a command as root	"sudo ""command"""	
 how to flush the sudo password caching system (by default password is cached for 5 minutes after each sudo command)	sudo -k	
@@ -179,7 +179,7 @@ redirect msg + error msg of tail /etc/passwd /etc/shadow in the SAME file	tail /
 print AND save to a file the result of ifconfig by overwriting the file	ifconfig | tee file.txt	
 print AND save to a file the result of ifconfig by appending the file	ifconfig | tee -a file.txt	
 show the kernel version	uname -r	
-update the db used by locate cmd	sudo update db	
+update the db used by locate cmd	sudo updatedb	
 show the number of directories and files + add infos of the current directory	locate -S	
 "find quicky all file containing ""password"" in their names"	locate password	
 "find quickly ""pass"" only in the basename"	locate -b pass	
@@ -190,3 +190,17 @@ find quickly a filename by ignoring case sensitive	locate -i filename
 find quickly a filename by using a regex	"locate -b -r 'regex'"	
 "display the path to the 'rm' cmd"	which rm	
 "display all the path of 'find' cmd"	which -a find	
+find in real time the file a.txt in the current directory	find . -name a.txt	
+find a.txt file in real time in the current directory with case sensitive option	find . -iname a.txt	
+find in real time in current directory all files starting by finance	"find . -type f -name ""finance*"""	
+find in current directory in real time a file named todo.txt and delete it	find . -type f -name todo.txt -delete	
+find in real time in current directory a file and execute ls onto	find . -name file -ls	
+find in real time all directories in /etc	find /etc/ -type d	
+find in real time in /etc all directories with a max depth of 2	find /etc -type d -maxdepth 2	
+find in real time in /var all files greater than 10m and execute ls	find /var/ -type f -size +10M -ls	
+find in real time in /var all file between 5M and 10M	find /var -type f -size +5M -size -10M	
+find in real time in /var all files modified in the last 24 hours + ls option	find /var -type f -mtime 0 -ls	
+find in real time in /var all files modified between 1 and 2 days ago + ls option	find /var -type f -mtime 1 -ls	
+find in real time all files modified in last hour	find . -type f -mmin -60	
+find in real time in /var all files belonging to gdm user + ls	find /var -type f -user gdm -ls	
+find in real time in /etc all files that doesnt belong to the root group + ls	find /etc -type f -not -group root -ls	
