@@ -42,8 +42,8 @@ change the password for root user	sudo passwd root
 Show the content of root directory (shortest manner)	ls /	
 show the content of root home directory (shortest manner)	ls /root/	
 where are located root directory of others users	/home	
-run comman with no traces (2 ways)	put a space before the command (ubuntu) set HISTCONTROL variable to ignorespace, then put a space before the command	
-A .... controls how date is stored and retrieved	file system	
+run command with no traces (2 ways)	put a space before the command (ubuntu) set HISTCONTROL variable to ignorespace, then put a space before the command	
+A .... controls how data is stored and retrieved	file system	
 On Linux, .... is considered to be a file On Linux, file and directory name are .....	everything case-sensitive	
 .... is the word used to the early period of file system .... is more used bu Windows users Both are interchangeable	Directory Folder	
 .... defines the structure and the directory content for a Linux Distribution	Filesystem Hierarchy Standard (FHS)	
@@ -75,7 +75,7 @@ parent directory ?	..
 "Using ""cd"", how to move to my current user directory (2 ways)"	cd cd ~	
 show the content of the parent directory	ls ..	
 "Show the content of the root directory, since the user's home directory"	ls ../..	
-Show the content of a directory as a treeview	tree	
+Show the content of current directory as a treeview	tree	
 print only the directories of a path in a tree view	tree -d path	
 Print files and directories of a directory with absolute paths	"tree -f ~ ""pathname"""	
 show the content of current directory as form as list	ls -1	
@@ -137,7 +137,7 @@ create a new file with a space in the filename (best practice is to avoid space 
 create a directory by displaying some details about the operation performing	mkdir -v directory	
 create a directory with another directory inside	mkdir dir1/dir2	
 create a sub sub directory even if the parent does not exists	mkdir -p first/second/third	
-copy password file in another file in the same directory	cp /etc/passwd ./users	
+copy password file in another file in the same directory	cp passwd ./newfile	
 copy a file by showing info about process	cp -v file1 file2	
 copy a file, but ask for a validation before execution	cp -i file1 file2	
 ALWAYS use ... key for auto completion	TAB	
@@ -160,7 +160,7 @@ removing two directories with forcing	rm -rf dir1 dir2
 remove a file by erasing it 100 times	shred -vu -n 100 file	
 list all files of current directory as list, in a human readable view, sorted by size desc	ls -lSh	
 show ten first files of /etc by passing /etc as params	ls /etc | head	
-show the last file of ten first lines of /etc/xattr.conf by using parameters	head /etc/xattr.conf -n 20 | tail -n 1&nbsp;	
+show the last line of ten first lines of /etc/xattr.conf by using parameters	head /etc/xattr.conf | tail -n 1&nbsp;	
 "search in /var/log/auth.log all the lines containing ""authentication failure"" and show the line numbers (use parameter)"	"sudo cat /var/log/auth.log -n | grep -a ""authentication failure"""	
 "show, by using parameters the number of lines returned by the command : sudo cat /var/log/auth.log -n | grep -a ""authentication failure"""	"sudo cat /var/log/auth.log -n | grep -a ""authentication failure "" | wc -l"	
 show numbers of lines, words and characters in /etc/passwd	wc /etc/passwd	
@@ -175,13 +175,13 @@ See the file behind a terminal	tty
 redirect the error msg of tail /etc/shadow in error.txt	tail /etc/shadow 2&gt; error.txt	
 redirect msg + error msg of tail /etc/passwd /etc/shadow in 2 files	tail /etc/passwd /etc/shadow &gt; ok.txt 2&gt; error.txt	
 redirect msg + error msg of tail /etc/passwd /etc/shadow in the SAME file	tail /etc/passwd /etc/shadow &gt; ok.txt 2&gt;&amp;1<br>	
-"cut the 1012 in ""vv:ffff:turi:1012"""	"cut -d"":"" -f4"	
+"cut the 1012 in ""vv:ffff:turi:1012"" (use parameters)"	"""vv:ffff:turi:1012"" | cut -d"":"" -f4"	
 print AND save to a file the result of ifconfig by overwriting the file	ifconfig | tee file.txt	
 print AND save to a file the result of ifconfig by appending the file	ifconfig | tee -a file.txt	
 show the kernel version	uname -r	
 update the db used by locate cmd	sudo updatedb	
 show the number of directories and files + add infos of the current directory	locate -S	
-"find quicky all file containing ""password"" in their names"	locate password	
+"find quicky ""password"" in the entire system"	locate password	
 "find quickly ""pass"" only in the basename"	locate -b pass	
 "find quickly a file named exactly 'seahorse.list'"	"locate -b '\seahorse.list'"	
 find all files having shadow in their basename	"locate -b 'shadow'"	
@@ -201,6 +201,26 @@ find in real time in /var all files greater than 10m and execute ls	find /var/ -
 find in real time in /var all file between 5M and 10M	find /var -type f -size +5M -size -10M	
 find in real time in /var all files modified in the last 24 hours + ls option	find /var -type f -mtime 0 -ls	
 find in real time in /var all files modified between 1 and 2 days ago + ls option	find /var -type f -mtime 1 -ls	
-find in real time all files modified in last hour	find . -type f -mmin -60	
+find in real time in the current directory all files modified in last hour	find . -type f -mmin -60	
 find in real time in /var all files belonging to gdm user + ls	find /var -type f -user gdm -ls	
 find in real time in /etc all files that doesnt belong to the root group + ls	find /etc -type f -not -group root -ls	
+find all the files in /etc modified in the last 24h and execute a cat onto (in order to show their content)	sudo find /etc -type f -mtime 0 -exec cat {} \;	
+find all files in /etc modified since 1 week and copy them to /root/backup	find /etc -type f -mtime -7 -exec cp {} /root/backup \; (7 means exactly 7 days, -7 means in the last 7 days)	
+find all files in /etc modified since 1 week and copy them to /root/backup BUT show a prompt that ask for each file if we want copy it	find /etc -type f -mtime -7 -ok cp {} /root/backup \;&nbsp;	
+"find the pattern 'user' in /etc/ssh/ssh_config file"	grep user /etc/ssh/ssh_config	
+"find the pattern 'command line' in /etc/ssh/ssh_config file"	"grep ""command line"" /etc/ssh/ssh_config"	
+"search by ignoring case sensitive ""SSH"" in /etc/ssh/ssh_config"	grep -i SSH /etc/ssh/ssh_config	
+"search by printing line number and by ignoring case sensitive ""SSH"" in /etc/ssh/ssh_config"	grep -i -n SSH /etc/ssh/ssh_config	
+"search all word 'body' in /etc/passwd"	grep -w body /etc/passwd	
+"search all pattern NOT containing ""kernel"" in /var/log/dmesg"	grep -v kernel /var/log/dmesg	
+search root in the binary file /var/log/auth.log like it was a text file	grep -a root /var/log/auth.log	
+search for the pattern 127.0.0.1 in all files of the directory /etc	grep -R 127.0.0.1 /etc	
+search for the pattern 127.0.0.1 in all files of the directory /etc by deleting all error msgs on the output	grep -Rs 127.0.0.1 /etc	
+"search the number of pattern ""error"" in /var/log/syslog (2 ways)"	grep -c error /var/log/syslog<br>grep error /var/log/syslog | wc -l	
+search error in kernel file by using parameters	dmesg | grep error	
+search error in kernel file by using parameters and print the 4 lines before and 5 lines after the found line	dmesg | grep -A 4 -B 5 error&nbsp;	
+search error in kernel file by using parameters and print the 3 lines before and after the found line	dmesg | grep -C 3 error	
+display al the open ports	sudo netstat -tupan	
+search all the programs listening on the port 53	sudo netstat -tupan | grep 53	
+list all files in /etc by showing the type of each file	list -RF /etc	
+list all files in /etc by showing the type of each file and :<br>- exclude all directories by symbol<br>- exclude all empty lines with a regex<br>- sort by name<br>	"sudo ls -RF /etc | grep -v / | grep -v ""^$"" | sort -r"	
