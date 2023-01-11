@@ -180,7 +180,6 @@ print AND save to a file the result of ifconfig by overwriting the file	ifconfig
 print AND save to a file the result of ifconfig by appending the file	ifconfig | tee -a file.txt	
 show the kernel version	uname -r	
 update the db used by locate cmd	sudo updatedb	
-show the number of directories and files + add infos of the current directory	locate -S	
 "find quicky ""password"" in the entire system"	locate password	
 "find quickly ""pass"" only in the basename"	locate -b pass	
 "find quickly a file named exactly 'seahorse.list'"	"locate -b '\seahorse.list'"	
@@ -224,3 +223,11 @@ display al the open ports	sudo netstat -tupan
 search all the programs listening on the port 53	sudo netstat -tupan | grep 53	
 list all files in /etc by showing the type of each file	list -RF /etc	
 list all files in /etc by showing the type of each file and :<br>- exclude all directories by symbol<br>- exclude all empty lines with a regex<br>- sort by name<br>	"sudo ls -RF /etc | grep -v / | grep -v ""^$"" | sort -r"	
+Show all the ascii characters embedded into ls command	strings /usr/bin/ls	
+printing characters on the partition /dev/sda5 using the low leve file	sudo strings -a /dev/sda5	
+search directly into the physical machine memory	strings /dev/mem	
+compare two files bytes by bytes and show the first line of mismatch	cmp a b	
+compare two files by hash	sha256sum file1 file2	
+make a deeper compare between two text files by ignoring blank lines, whitespaces and case differences in file context	diff -Bwi a b	
+make a full detailed comparison between two files	diff -c file1 file2	
+make a full detailed comparison between two files line by line	diff -y file1 file2	
