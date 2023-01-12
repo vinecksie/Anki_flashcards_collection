@@ -186,3 +186,46 @@ compare two files by hash	sha256sum file1 file2
 make a deeper compare between two text files by ignoring blank lines, whitespaces and case differences in file context	diff -Bwi a b	
 make a full detailed comparison between two files	diff -c file1 file2	
 make a full detailed comparison between two files line by line	diff -y file1 file2	
+VIM open a file (2 ways)	vi file<br>vim file	
+VIM 3 basic mode ?	command<br>insert<br>last line	
+VIM open the tutorial	vimtutor	
+VIM launch ls command since a textfile	:!ls	
+VIM when you are on a word, how search for the next same occurence	press *	
+"VIM how find and replace all 'No' by 'Yes' (precise the mode)"	last line mode<br>%s/No/Yes/g	
+VIM in which mode and how undo to the last saved version of the file	last line mode<br>e!	
+VIM in which mode and how undo the last operation only	command mode<br>u	
+VIM in which mode and how undo the previous command operation	command mode<br>ctrl r	
+VIM which mode and how cut a line (it will be copied to the clipboard)	cmd mode<br>dd	
+VIM which mode and how paste from clipboard, before and after the cursor	command<br>P p	
+VIM which mode and how cut 34lines	command<br>34dd	
+VIM which mode and how select current character	command<br>v	
+VIM which mode and how select current line	command<br>V	
+VIM which mode and how to yank (copy to clipboard)	command<br>y	
+VIM which mode and how set the line numbers	last line<br>set nu	
+VIM which mode and how unset the line numbers	last line<br>set nonu	
+VIM which mode and how show/not show syntax code color	last line<br>syntax on<br>syntax off	
+VIM make syntax on instruction permanent	"vim ~/.vimrc and add ""syntax on"""	
+VIM which mode and how to move to the line 399	command<br>:399	
+VIM which mode and how move to the end of the file	command<br>G	
+VIM which mode and how move to the beginning of the file	command<br>gg	
+VIM when two files are opened in non stacked mode : which mode and how go next/previous files (4 ways)	last line<br>n or next<br>N or prev	
+VIM how open two files in stacked mode	vim -o file1 file2	
+VIM in multi files stacked mode, how switch between files	ctrl w	
+VIM open two files for comparison (2 ways)	vim -d file1 file2<br>vimdiff file1 file2	
+VIM if close a file un properly, how to do	delete the swap file	
+VIM config file	~/.vimrc	
+VIM Entering the Insert Mode from the Command Mode - insert before the cursor	i	
+VIM Entering the Insert Mode from the Command Mode - insert at the beginning of the line	I	
+VIM Entering the Insert Mode from the Command Mode - insert after the cursor	a	
+VIM Entering the Insert Mode from the Command Mode - insert at the end of the line	A	
+VIM Entering the Insert Mode from the Command Mode - insert on the next line	o	
+VIM Entering the Insert Mode from the Command Mode - insert on the previous line	O	
+VIM Entering the Last Line Mode from the Command Mode	:	
+VIM Returning to Command Mode from Insert or Last Line Mode	ESC	
+VIM which mode and how remove char under the cursor	command<br>x	
+VIM which mode and how save and quit	command<br>ZZ	
+VIM which mode and how move to the end of line	command<br>$	
+VIM which mode and how move to the beginning of file (2 ways)	command<br>0 or ^	
+VIM which mode and how write the file	last line<br>w!	
+VIM which mode and how quit the file without saving	last line<br>q!	
+VIM which mode and how save/write and quit	last line<br>wq!	
