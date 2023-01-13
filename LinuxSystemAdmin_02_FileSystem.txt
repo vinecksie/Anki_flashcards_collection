@@ -62,7 +62,7 @@ How to change the change time?	Modify the system data time, then update a file
 get date	date	
 get UCT format date	date -u	
 list content of current directory by timestamp	ls -lt	
-list directory current content sorted by access time (and show this access time)	ls -ltu	
+list directory current content with timestamp sorted by access time (and show this access time)	ls -ltu	
 show the access time for each component of actual directory sort by name (default sort)	ls -lu	
 "how to reverse the sorting instruction of ""ls -lu"" ? (2 ways)"	ls -lu -r ls -lu --reverse	
 In Linux, the .... is not mandatory for each file. The ..... contains informations about the type of the file	extension header	
@@ -229,3 +229,13 @@ VIM which mode and how move to the beginning of file (2 ways)	command<br>0 or ^
 VIM which mode and how write the file	last line<br>w!	
 VIM which mode and how quit the file without saving	last line<br>q!	
 VIM which mode and how save/write and quit	last line<br>wq!	
+using gzip, archive and compress /etc content in a file, and show infos to the screen	sudo tar -czvf etc.tar.gz /etc (always put f at the end)	
+using bzip, archive and compress content of /etc. showing info to the screen	tar -cjvf etc.tar.bz2 /etc (bzip is slower but compress in a smaller size)	
+archive and compress /home/user1 with gzip and showing info + excluding mkv and zip files	"tar --exclude='*.mkv' --exclude='*.zip' -czvf user1.tar.gz /home/user1"	
+extract the archive etc.tar.gz in the current directory	tar -xzvf etc.tar.gz	
+extract the bzip archive etc.tar.bz2 in /backup directory	tar -xvf etc.tar.bz2 -C /backup	
+see the content of an gzip archive	tar -tf archive	
+search sshd_config files inside an archive	tar -tf archive |&nbsp; grep sshd_config	
+"create an archive with the current date in the file name like 'etc-2020-08-01.tar.bz2'"	sudo tar -cjvf etc-$(date +%F).tar.bz2 /etc	
+extract online compress file	wget archiveurl	
+Others command for zip and unzip (4 ways)	gzip&nbsp;<br>gunzip<br>bzip2<br>bunzip2	
