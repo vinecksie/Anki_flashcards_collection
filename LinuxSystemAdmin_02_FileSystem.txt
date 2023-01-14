@@ -239,3 +239,17 @@ search sshd_config files inside an archive	tar -tf archive |&nbsp; grep sshd_con
 "create an archive with the current date in the file name like 'etc-2020-08-01.tar.bz2'"	sudo tar -cjvf etc-$(date +%F).tar.bz2 /etc	
 extract online compress file	wget archiveurl	
 Others command for zip and unzip (4 ways)	gzip&nbsp;<br>gunzip<br>bzip2<br>bunzip2	
+Each file on the disk has a data structure called ... or ...&nbsp;associated with it	index node&nbsp;<br>inode	
+Index node or inode stores ... information about the file such as the type, file’s permission, file’s owner and group owner, timestamp information, file size and so on	metadata	
+inode actually contains all file information except the ... and the ...	file content<br>name	
+<div><div>Each inode is uniquely identified by an integer number called ...</div></div>	inode number	
+show inode number for each file of current directory	ls -i	
+list inodes of each file of the current directory	ls -l	
+Hard link is ...	an association between the file structure (inode) and the filename	
+The ... can be accesed since several hard links	same file	
+Show the number of hard link for a file and the name of the property	stat file (link property)	
+create a new hard link b.txt for the a.txt file	ln a.txt b.txt	
+For one inode, we can have ... hard link	several	
+find all the soft link for the inode number 408368 in the current directory	find . -inum 408368	
+we cannot create hard link on different ... or ...	partitions<br>disks	
+... allow files, programs, scripts to access in different directories without making copies of the same files	hard links	
