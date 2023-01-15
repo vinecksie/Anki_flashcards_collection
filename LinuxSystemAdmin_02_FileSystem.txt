@@ -253,3 +253,10 @@ For one inode, we can have ... hard link	several
 find all the soft link for the inode number 408368 in the current directory	find . -inum 408368	
 we cannot create hard link on different ... or ...	partitions<br>disks	
 ... allow files, programs, scripts to access in different directories without making copies of the same files	hard links	
+find all files in /usr with more than one link	find /usr -type f -links +1	
+others names for soft links : ... , ...	symbolic links, symlinks	
+... is an association between a inode structure and a file name into a directory	hard link	
+... is just a special file type that point to or contain a reference to another file or directory	soft link	
+... references the file inode and ... references another file	hard link<br>simlink	
+if you delete a ...,&nbsp; the remaining file point to the same space or inode in the file system, and they still contain the data stored on the disk	hard link	
+if you delete a file where a... points to the ... will be useless or be broken	simlink	
