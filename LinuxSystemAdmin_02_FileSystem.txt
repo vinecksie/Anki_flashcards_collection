@@ -260,3 +260,13 @@ others names for soft links : ... , ...	symbolic links, symlinks
 ... references the file inode and ... references another file	hard link<br>simlink	
 if you delete a ...,&nbsp; the remaining file point to the same space or inode in the file system, and they still contain the data stored on the disk	hard link	
 if you delete a file where a... points to the ... will be useless or be broken	simlink	
+create a simlink	ln -s /etc/passwd ./pswd	
+show the link behind the soft link ./pswd	ls -l ./pswd	
+display all the running processes	ps aux	
+create hardlink called p.txt for the file processes.txt	ln processes.txt p.txt	
+create simlimk called symlink_p.txt for the file processes.txt	ln -s processes.txt symlink_p.txt	
+if we move a file from a directory to an another, all the .... will be broken	symlinks	
+... are used INTENSIVELY by many services like web server like Apache 2	symlinks	
+we cannot create hard link to a ...	directory	
+A ... can cross the file system. A ... is tied to the partition or file system	symlink<br>hardlink	
+"the permission of the ... doesn't matter because the permissions of the linked file will be checked"	symlink	
