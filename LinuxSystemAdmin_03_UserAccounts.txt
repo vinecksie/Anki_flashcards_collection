@@ -1,0 +1,56 @@
+list the two interesting files for user accounts management	ls /etc/passwd /etc/shadow	
+... contains all basic informations of user accounts of the system	/etc/passwd	
+each ... of /etc/passwd represents ... of .... user or .... user	line<br>a single account<br>type normal<br>system	
+Describe each fields of this /etc/passwd line for the list user account :<br>list:x:38:38:Mailing List Manager:/var/list:/usr/sbin/nologin&nbsp;	"user's login name<br>x means a password has been assigned but it is registered in another file (shadow file)<br>user id<br>group id<br>comment<br>user's home directory<br>default shell (if equals to 'false' or 'nologin' mean it is a system user not allowed to login into the system)"	
+/etc/shadow file contains ... for each user account and is only readable by ... user account	passwords<br>root	
+/etc/shadow lines contain each . comma separated fields<br>Describe each component of this line :&nbsp;<br>vincent:!:19345:0:99999:7:::&nbsp;	9<br>username (this field allows a link with /etc/password file)<br>represents the password (if equals to ! or *, the user wont be able to connect by authentication)<br>7 remaining fields are about the password expiration	
+/etc/shadow file, password field structure ? and detail each component	$type$salt$hash<br>TYPE: cryptographic algorythm used<br>SALT : enforce the uniqueness of output hash (the same password will give different hashes because of the salt). <br>Salt is random but not secret.<br>HASH :&nbsp; hash of the password	
+/etc/shadow file, password field, $type &gt; values possibles ?	1 MD5<br>2a Blowfish<br>2y Eksblowfish<br>5 SHA-256<br>6 SHA-512	
+there are two types of groups that a user can belong to	primary group<br>secondary group	
+&nbsp;primary group : the id is stored in ... and the group name in ...	/etc/passwd<br>/etc/group	
+secondary group : stored in	/etc/group	
+When a user create a file, the user will be the ... of the file and its ... will be the group owner of the file	owner<br>primary group	
+In Linux, a file is owned by both ... and the ...	user<br>group	
+search after the entries for student in the user file	grep student /etc/passwd	
+search the primary group for the user vboxuser in the right file<br>(result of /etc/passwd : vboxuser:x:1000:1000:vboxuser,,,:/home/vboxuser:/bin/bash)	grep 1000 /etc/group	
+find all the secondary groups for the user vboxuser with less	less /etc/group<br>/vboxuser	
+list all the groups the actual user belongs to	groups	
+"the primary group of a user is at the ... position when we run 'groups user'"	first	
+list all the groups the user root belongs to	groups root	
+print detailed infos about the user and his groups (id and names)	id user	
+create new user with the simplest manner	sudo useradd u1	
+when a user is created with default option, which file contains default values for him	etc/default/useradd	
+the file ... contains options for the shadow password, password expiration policies, range user ids, etc...	etc/login.defs	
+set the password for a new user	sudo passwd username	
+create a user by giving the most common options manually&nbsp;<br>(home directory, description, shell, secondary groups, password expiration date)	"sudo useradd -m -d /home/jean -c ""DevOps Engineer"" -s /bin/bash -G admin,mail -e 2025-12-12&nbsp; jean"	
+change the expiry policy for a system user + show actual informations	chage -l username	
+"sometimes you need an user account only to run a service for a server.<br>every ... or ... in Linux need this type of user and it is recommended they are not root.<br>that's why you can have some user with shell option as ... or ..."	daemon&nbsp;<br>process<br>/usr/sbin/login<br>/bin/false	
+On ubuntu, adduser is more interactive than ... command.<br>No differences about features provided between.	useradd	
+All users information are stored in 5 files	etc/passwd<br>etc/shadow<br>etc/group<br>etc/gshadow<br>etc/login.defs (contains default options for new users)	
+change the comment field for the vboxuser	"sudo usermod -c ""Linux Sysadmin"" vboxuser"	
+change the primary group to daemon for james	sudo usermod -g daemon james	
+if you update secondary groups for a user with ..., be careful to ..., otherwise he will be removed from these groups	usermod<br>include existing groups you want he continues to belong	
+"add james to the sudo groups by preserving actual user's group assignments"	sudo usermod -aG sudo james	
+delete a user and all associated files and group with the same name than the user (if no other users are members of this group)	sudo userdel user	
+Remove a user and its home directory	sudo userdel -r user	
+admin predefined name is ... on ubuntu/debian, ... on centos/redhat	sudo<br>wheel	
+opening a session as thor user	su thor	
+add a new group called engineering	sudo groupadd engineering	
+update the name of engineering group to engineers	sudo groupmod -n engineering engineers	
+delete the group tmpusers	sudo groupdel tmpusers	
+It is not possible to delete the primary group of the user, before first ...	removing the user	
+... is the user who initially logs in	RUID real user id	
+... is the current user in the shell	EUID	
+show EUID (2 ways)	whoami<br>id -un	
+display the name of the RUID	who	
+print the effective user and its groups	id	
+... is the file which logs the current user on the system	/var/run/utmp	
+... is the history file for the utmp file	var/log/wtmp	
+check is the ssh service is running	sudo systemctl status ssh	
+in order to communicate by ssh between two vms, you have to put network interfaces on ... for both	bridge mode	
+connect to another vm via ssh	ssh user@ipadr	
+show who is logged in and what they are doing	w	
+show info about users connected and their load average (2 ways)	uptime<br>w	
+shoz losting of last logged in users<br>useful for track ... or possible ...	last<br>user activities<br>security breaches	
+last command read the ... file and print information log in and log out of users	/var/log/wtmp	
+show last activity for vboxuser	last vboxuser	
