@@ -7,3 +7,7 @@ each file or directory has an ... and a ... .<br>By default, the ... is the user
 remove all perm on a file (absolute mode)	chmod 000 file	
 the files read and write permissions of a fil are only for ... user	non privileged	
 a file with execute permission is a .... or ....	shell script<br>linux command	
+see for /etc/passwd octal and symbolic notation of file permission	stat /etc/passwd	
+the number that represents the permission in ... can be either a ... number with digits from 0 to 7. the leading zero can be omitted	base 8<br>3 or 4 digit<br>	
+when a 3 digit number is used,<br>first digit : ...<br>second digit : ...<br>third digit : ...	permission of file owner<br>permission of file group<br>permission of the others class	
+read, write, execute have their own fixed number value for the Octal Notation<br>r = .<br>w = .<br>x = .<br>- = .	r = 4<br>w = 2<br>x = 1<br>- = 0	
