@@ -11,3 +11,48 @@ see for /etc/passwd octal and symbolic notation of file permission	stat /etc/pas
 the number that represents the permission in ... can be either a ... number with digits from 0 to 7. the leading zero can be omitted	base 8<br>3 or 4 digit<br>	
 when a 3 digit number is used,<br>first digit : ...<br>second digit : ...<br>third digit : ...	permission of file owner<br>permission of file group<br>permission of the others class	
 read, write, execute have their own fixed number value for the Octal Notation<br>r = .<br>w = .<br>x = .<br>- = .	r = 4<br>w = 2<br>x = 1<br>- = 0	
+... is the command user to change permissions of a file using the ... or ... notation.<br>only the ... or ... can change the permission	chmod<br>symbolic<br>numeric<br>root<br>file owner	
+chmod [...][...][...] filename<br><br>who : ..., ..., ...<br>Operation : ..., ..., ...<br>permissions : ., ., .	who OPERATIONS permissions<br><br>who : u user, g group, o others<br>operations : - remove, + add, = equals<br>permissions : r, w, x	
+user.txt : -rw-rw-r-- 1 vboxuser vboxuser 44 Jan 24 10:05 user.txt,&nbsp;<br>remove the write permission for the user using the symbolic notation	chmod u-w user.txt	
+user.txt : ----rw-r-- 1 vboxuser vboxuser 44 Jan 24 10:05 user.txt,&nbsp;<br>give all permissions to the owner using the symbolic notation	chmod u+rwx user.txt	
+user.txt : -rw-rw-r-- 1 vboxuser vboxuser 44 Jan 24 10:05 user.txt,&nbsp;<br>remove the read permission for the owner using the symbolic notation<br>add the execute permission for the group using the symbolic notation<br>+ add verbose	chmod -v u-r,g+x user.txt	
+user.txt : ----rw-r-- 1 vboxuser vboxuser 44 Jan 24 10:05 user.txt,&nbsp;<br>give execute permissions to the owner and group using the symbolic notation	chmod ug+x user.txt	
+user.txt : -r--rw-r-- 1 vboxuser vboxuser 44 Jan 24 10:05 user.txt,&nbsp;<br>delete read permissions for everyone using the symbolic notation	chmod a-r user.txt	
+user.txt : ----rw-r-- 1 vboxuser vboxuser 44 Jan 24 10:05 user.txt,&nbsp;<br>give read and write permissions to the owner and group using EQUALS and using the symbolic notation	chmod ug=rw user.txt	
+user.txt : ----rw-r-- 1 vboxuser vboxuser 44 Jan 24 10:05 user.txt,&nbsp;<br>remove all permissions to the group using EQUALS using the symbolic notation	chmod g= user.txt	
+user.txt : ----rw-r-- 1 vboxuser vboxuser 44 Jan 24 10:05 user.txt,&nbsp;<br>give all permissions to everyone using the numeric notation	chmod 777 user.txt	
+user.txt : ---------- 1 vboxuser vboxuser 44 Jan 24 10:05 user.txt,&nbsp;<br>give read and write permissions to the owner using the numeric notation	chmod 600 user.txt	
+user.txt : ----rw-r-- 1 vboxuser vboxuser 44 Jan 24 10:05 user.txt,&nbsp;<br>give read permissions to everyone using the numeric notation	chmod 444 user.txt	
+change file permission of all files in /etc by giving<br>read and write permission to the owner only	chmod -R 600 etc/	
+give the permissions of file user.txt to the file new.txt	chmod --reference=user.txt new.txt	
+.... permission on a directory just means we can see the content by running ls	read	
+on directories. the ... permissions has effects only if we have the ... permission	write<br>execute	
+the ... permissions on a directory means to have access to its ...	execute<br>contents	
+"the permission on the .... directory are more important than the file's permissions"	parent	
+set the permission of all files of user home directory to 640<br>and the permission of all directories to 750<br>(2 commands)	find ~ -type f -exec chmod 640 {} \;<br>find ~ -type d -exec chmod 750 {} \;	
+show infos about cpu	lscpu	
+change the owner of cpu.txt file to franky	sudo chown franky cpu.txt	
+change the owner of cpu.txt file to the userid 1000 (by avoiding missmatch with potential 1000 user names)	sudo chown +1000 cpu.txt	
+change user and group of cpu.txt file using chown command (2 ways)	sudo chown franky:daemon cpu.txt<br>sudo chown franky.daemon cpu.txt	
+change the group owner of cpu.txt to sudo group (2 ways)	sudo chgrp sudo cpu.txt<br>sudo chown :sudo cpu.txt	
+3 extra file permissions for file or directory : ..., ..., ...	SUID set user id<br>SGID set group id<br>Sticky bit	
+By default, linux commands and programs run with the exact permissions of the user that execute the command. When an executable file with SUID is executed, the resulting process will have the permission of ...	the owner of the command	
+Sometimes, it is required to temporary treat user as root and this is where the .... is useful	SUID	
+set SUID on cat command (sy;bolic and octal)<br>result of which cat : /usr/bin/cat<br>result of stat : 0755	sudo chmod 4755 /usr/bin/cat<br>sudo chmod u+s /usr/bin/cat	
+SUID. ... means there is no owner executable permissions put on this file	S	
+SUID is userful for non privileged users to ...	change their password	
+find all files in /usr/bin having at least the permission SUID set up	find /usr/bin -pern -4000	
+... is mainly set on directories. all file or directories created inside will be owned by the same group owner of the directory where SGID was configured.<br>this is useful in ..., which are directories that are writable at the group level	SGID<br>creating shared directories	
+set the SGID on /programming folder (actual permissions are 770) symbolic and octal mode	chmod 2770 /programming<br>chmod g+s /programming	
+"the sticky bit is applied to ...<br>in a shared directory, it prevents that user ... anyone else's files"	directories<br>delete	
+set the Sticky on /temp folder (actual permissions are 770) symbolic and octal mode	chmod 1770 /temp<br>chmod o+t /temp	
+... enables to see the default permissions given to a file or directory created in linux	Umask	
+... is the default octal file permission<br>... is the default octal directory permission	0666<br>0777	
+default permission for file and directories are calculated by substracting umask value ... to default file permission ... and default folder permission	002<br>0666<br>0777	
+change umask value to 0022	umask 0022	
+... define the property of the files	attributes	
+file attribute has 2 states : ... and ...	set<br>cleared	
+list attributes of the file in the sub directories of the current directory	lsattr	
+--------------e------- ./linux&nbsp;<br>e indicates a ... attribute<br>- indicates a ... attribute<br>e means ...	set<br>cleared<br>extended format (the file use extends for mapping the block on disk)<br>	
+"add attribute 'append only' to user.txt file"	sudo chattr +a user.txt	
+Attributes :<br>a : ...<br>A : ...<br>i : ...	append only<br>no atime updates<br>immutable	
