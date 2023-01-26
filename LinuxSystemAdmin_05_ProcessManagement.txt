@@ -1,0 +1,99 @@
+a running instance is called a ... and it runs in its own ...<br>each time you ..., a new process starts	process<br>memory space<br>execute a command	
+a process is an ... as opposed to a program, which is considered as a passive entity	active entity	
+a new process is created only when runnning an ... (not when running ...)	executable file<br>shell builtin commands	
+process properties (4)	PID process id (unique positive integer)<br>user<br>group<br>priority / nice	
+types of processes (5)	parent<br>child<br>daemon<br>zombie (defunct)<br>orphan	
+each time you ..., a process start	execute a new command	
+check if a command is a executable file or a Shell builtin<br>what is rm ?<br>what is cd ?	type<br>rm is an executable file<br>cd is shell builtin	
+multiple thread can exist into the ...	same process	
+processes and ... are synonyms	tasks	
+display processes running in the current terminal	ps	
+ps stands for	process status	
+pid is the id automatically assigned and used by the ... to uniquely identify ...	kernel<br>each process	
+... allows to interact with the process	PID	
+&nbsp;... the name of the controlling terminal for the process	TTY	
+ps command<br>... allows to interact with the process<br>... is the name of the controlling terminal for the process<br>... shows the command that started the process	PID<br>TTY<br>CMD	
+list all processes	ps -e	
+display all processes in a formatted way with more details	ps -f	
+show the number of all processes running	ps -e | wc -l	
+PPID&nbsp;	process parent id	
+STIME<br>	starting time	
+if you see a .... in TTY column, it is probable a ... or a ...	?<br>daemon<br>service	
+write ps aux in another way	ps -aux	
+5 new columns showed with ps aux commands are	% CPU<br>% MEM<br>VSZ visual memory size (in kb)<br>RSS (size of the physical memory that the process is using)<br>STAT process state&nbsp; using a code	
+ps aux. column STAT, possible values ?	S sleeping<br>R running<br>Z zombie<br>T stopped<br>I idle kernel thread<br><br>&lt; high priority<br>N low priority	
+show the process with aux sorted by % of memory ascending and show results according the size of the screen	ps aux --sort=%mem | less	
+show the process with aux sorted by % of memory descending and show results according the size of the screen	ps aux --sort=-%mem | less	
+see the process of the vboxuser user	ps -f -u vboxuser	
+check if a specific daemon or service is running (sshd for instance) (very common feature)	ps -ef | grep sshd	
+check if daemon sshd is running by returning only its PID	pgrep sshd	
+... is a concat with ps and grep to avoid to lookup after the command itself executing	pgrep	
+check if daemon sshd is running by returning only its PID AND its name	pgrep -l sshd	
+search processes named sshd for the user vboxuser	pgrep -u vboxuser sshd	
+show running process under a tree	pstree	
+with pstree, the number for some lines represents the number of ...	branches	
+show process running under a tree by desactivating the bramches number	pstree -c	
+show dynamically processes running	top	
+top command show the ... area and the ... area	summary<br>task	
+top update each display each ... seconds	3	
+top command &gt; summary area &gt; average value for a healthy system should less than ...	1	
+top command &gt; in the task area, running processes are ...	highlighted	
+top command &gt; show detailed summary for cpus	1	
+top command &gt; show cpu as detailed percentage + graph	t	
+top command &gt; change the memory and swap view	m	
+top command &gt; change the delay of refresh to 5 seconds	d, then type 5	
+top command &gt; refresh the screen manually	space	
+&nbsp;top command &gt; highlight the running process and the columns used to sort the processes	y and x	
+top command &gt; alternate bold or text highlighting	b	
+top command, in x y modem change the column used for the sorting	&lt; or &gt;	
+top command, during x y mode. reverse the sort on the column selected	R	
+top command, during x y mode, change the unit	e	
+top command, sort by processor or cpu	P	
+top command &gt; sort by memory	M	
+top command &gt; see the processes for a single user	u	
+top command &gt;&nbsp;<br>access to all columns<br>add/remove a column<br>move the position of a column	F<br>space<br>right arrow then up/down	
+top command &gt; save the new setup of the form	W	
+put in a txt file the processes with 3 iterations, a delay of 1 second and in batch mode	top -d 1 -n 3 -b &gt; processes.txt	
+see differences between each refresh of top command for rsyslogd process (iterations has been registered in a file)	grep rsyslogd file	
+... is a process viewer more appealing than to, but not installed by default	htop	
+... command send a signal to a process.<br>when no signal is specified in the command, kill send ... or ... signal	kill<br>15<br>SIGTERM	
+show all signal disposable with the kill command	kill -l	
+kill &gt; a signal is identified either by his ... or by his ...	number&nbsp;<br>name	
+a signal is an ... sent to a process that determine how the process shold behave	asynchronous notification&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;	
+the ... command invitate a process to execute an action.<br>invitate because the process can ... for ...	kill<br>decide to ignore these instructions<br>some kill signals	
+find the pid of gedit process	pgrep -l gedit	
+find quickly and all the firefox process	pidof firefox	
+kill the process id 14757 by using the number of sigint	kill -2 14757	
+kill all firefox processes by using the name of signal 2<br>(pidof firefox 14888 15000 13888)	kill -INT 14888 15000 13888	
+kill all firefox process by using the entire name of signal 2 and by using&nbsp; a variable for finding pids of firefox	kill -SIGINT $(pidof firefox)	
+where process id of daemon are saved ?	/var/run	
+send invitation to sshd to reload by using variables and name of the signal AND number (two commands)	sudo kill -1 $(pidof sshd)<br>sudo kill -SIGHUP $(pidof sshd)	
+for some signal sent by the kill command, the process can act in 3 different ways	kill itself<br>kill self with delay the time to clean its resources<br>ignore the signal	
+... is a soft kill because processes can decide to ignore it	SIGTERM	
+... is the hard kill of kill signals	SIGSKILL	
+kill a process id with a hard kill by using number	kill -9 pid	
+kill all processes of firefox by using the name of the process, not the pid	killall firefox	
+kill all processes of firefox by using just a part of the process name	pkill firef	
+.... are started by the user and not by the system services and while they are running the user cannot ...	foreground process<br>start another process from the same terminal	
+two types of process	foreground<br>background	
+by default, every process launched work in the ...	foreground	
+example of foreground process that prevent us tu use the terminal during 5 seconds	sleep 5	
+.... are non interactive and executed by system services	background processes	
+run the sleep 20 command as a background process	sleep 20 &amp;	
+even if the background process runs in background,&nbsp; its ... will be prompted on the same terminal.<br>for avoiding this thin, you can ...	outputs<br>redirect output and error to a file	
+run the ping -c 1 8.8.8.8 as bakcground by redirecting output to the common directory used in this case	ping -c 1 8.8.8.8 &gt; /dev/null 2&gt;&amp;1 &amp;	
+... is a special file called null devices and is locally called the ... because it diguss immediately everything put to it	/dev/null<br>black hole	
+each background process is identified by two numbers : ... and ...	job id<br>process id PID	
+display job ids of running background process	jobs	
+show the job ids with the process ids	jobs -l	
+jobs is local, it is maintained by the current shell, so you can the ... in different shell sessions	same current job id	
+the process id is maintained by .... it has a global scope.	the system kernel	
+bring the background process sleep with jobid 1 to the foreground	fg %1	
+suspend the process running in the foreground	ctrl z	
+put the process with jobid 5 to the background	bg %5	
+resume the stopped jobid 7 in the foreground	fg %7	
+running sleep 30 in the background without being impacted by terminal closure, log out, etc...	nohup sleep 30 &amp;	
+nohup redirect the command output to a file called ... in the working directory	nohup.out	
+... and ... are useful terminal avoiding being terminated by logout, etc...	screen<br>tmux	
+the owner of a command launched in the terminal with 0755 as permissions and root as owner is ...	the user that runs this command	
+the owner of a command launched in the terminal with 4755 as permissions and root as owner is ...	root because its the owner of the command and the SUID is set	
