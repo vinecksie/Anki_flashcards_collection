@@ -1,0 +1,31 @@
+reboot the system	reboot
+ifconfig and ... are similar. the second is newer on the distributions	ip
+list all the network interface and their ip adresses (2 ways)	ifconfig -a ip address show
+write ip address show in another manner (2)	ip addr show ip a show
+in ip address show, you can omit ... and write ...., because show is the default instruction	show ip address
+show only list of interfaces enabled	ifconfig
+show only ipv4 adrs using ip	ip -4 a
+show only ipv6 adrs using ip	ip -6 a
+interface name description : enp0s3	en ethernet / wl wirelesslan because pci card : port 0 slot 3
+get specific informations on the enp0s3 interface (2 ways)	ifconfig enp0s3 ip a s dev enp0s3
+show the gateway infos	route
+show gateway infos with the numeric option for the names (2 ways)	route -n ip route show
+route command, the ... in the Flag column indicate the ...	G default gateway
+show infos on dns	resolvectl status
+unactivate the enp0s3 interface (2 ways)	ifconfig enp0s3 down ip link set enp0s3 down
+activate the enp0s3 interface (2 ways)	ifconfig enp0s3 up ip link set enp0s3 up
+set up an ip address on the interface enp0s3 using ifconfig	ifconfig enp0s3 192.168.0.111/24 up
+set new ip address on enp0s3 interface with ip command (2 cmds)	ip a del 192.168.0.111/24 enp0s3 ip a add 192.168.0.111/24 enp0s3
+create a new default gateway (2 steps in 2 ways)	route del default gw 192.168.0.1 route add default gw 192.168.0.2 ip route del default ip route add default via 192.168.0.2
+change the mac adr of the interface enp0s3 (2 ways)	ifconfig enp0s3 down ifconfig enp0s3 hw ether 00:03:27:51:45:34 ifconfig enp0s3 up ip link set dev enp0s3 address 00:03:27:51:45:34
+... is the default network management tool	netplan
+netplan tool uses ... file that are located to ...	yaml /etc/netplan
+Netplan support 2 ... to control networking interfaces. ... (used mostly on ...) and ... (used on ...)	renderers backend services network manager (desktop machines) and systemd-networkd (server without GUI)
+the network interface can be managed either by ... either by ..., but ...	network manager systemd-networkd not by both of them at a same time
+Stop NetworkManager service	systemctl stop NetworkManager
+"disable NetworkManager service, so it won't start after a restart"	systemctl disable NetworkManager
+check the status of NetworkManager	systemctl status NetworkManager
+check if NetworkManager is enabled for the boot	systemctl is-enabled NetworkManager
+"Description of this netplan yaml file : network: version: 2 renderer: networkd ethernets: enp0s3: dhcp4: false addresses: - 192.168.0.20/24 gateway4: ""192.168.0.1"" nameservers: addresses: - ""8.8.8.8"" - ""8.8.4.4"""	"each file always start with the 'network' keyword Then, at least 3 required elements : - the version of the network configuration format - the renderer - the device type"
+apply changes after updated the netplan config file	netplan apply
+Yaml use ... for indentation	two spaces
