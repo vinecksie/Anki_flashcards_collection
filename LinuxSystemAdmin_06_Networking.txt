@@ -29,3 +29,19 @@ check if NetworkManager is enabled for the boot	systemctl is-enabled NetworkMana
 "Description of this netplan yaml file : network: version: 2 renderer: networkd ethernets: enp0s3: dhcp4: false addresses: - 192.168.0.20/24 gateway4: ""192.168.0.1"" nameservers: addresses: - ""8.8.8.8"" - ""8.8.4.4"""	"each file always start with the 'network' keyword Then, at least 3 required elements : - the version of the network configuration format - the renderer - the device type"
 apply changes after updated the netplan config file	netplan apply
 Yaml use ... for indentation	two spaces
+... is useful for testing and troubleshooting the network connectivity	ping
+an ip address can be set to ...	multiple differents domain names
+ping ubuntu.com by avoiding the dns resolution name	ping ubuntu.com -n
+by default, ping wait .... before sending each packet	1 second
+infos on a ping line : ...	size of the packet seq number ttl : num of hosts between source and dest time : for a send a packet and receive a response (under 40 very good, over 100 not good for realtime, voip, etc...)
+send 5 ping to google.com with a delay of 0.3 seconds between each packet	ping -i 0.3 -c 5 google.com
+send 5 ping to google.com by only displaying the summary	ping -q -c 5 google.com
+find the second router ip adr for the path of this command : ping -c 3 ubuntu.com	ping -t 2 -c 3 ubuntu.com
+SSH stands for	Secure Shell
+SSH protocol is used for : - - -	- secure remote management of server, routers, networking devices - network file copy : rsync, scp, sftp, winscp - tunneling, ssh port forwarding
+... is the ssh server (daemon) and ... or ... is the client	sshd ssh putty
+ssh installation cmd on ubuntu	sudo apt update && sudo apt install openssh-server openssh-client
+ssh installation command on CentOS	sudo dnf install openssh-server openssh-clients
+ssh server config file	/etc/ssh/sshd_config
+ssh client config file	/etc/ssh/ssh_config
+check with ps and grep is ssh is running	ps -ef | grep ssh
