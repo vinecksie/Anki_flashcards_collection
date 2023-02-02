@@ -1,0 +1,500 @@
+A .... controls how data is stored and retrieved	file system
+On Linux, .... is considered to be a file On Linux, file and directory name are .....	everything case-sensitive
+.... is the word used to the early period of file system .... is more used bu Windows users Both are interchangeable	Directory Folder
+.... defines the structure and the directory content for a Linux Distribution	Filesystem Hierarchy Standard (FHS)
+.... contains binaries or exe available to all users	/bin
+... contains apps that only root will need	/sbin
+... contains files required for starting the system	/boot
+"... where you will find all users' home directories root has its home directory separated in ...."	/home /root
+... contains device files	/dev
+... contains all system-wide configuration files	/etc
+... contains shared library files used by apps	/lib
+... used for external storage automatically mounted ... is like media but not very often used	/media /mnt
+Every files and directories appears under the root directory even if they are stored ....	on different physical disks
+"2 ways to show the content of the user's home directory"	ls ~ ls /home/username
+... contains temporary files	/tmp
+... is a virtual directory. It contains informations about computer hardware,	/proc
+... contains informations about devices, drivers, kernel features	/sys
+... contains datas for servers	/srv
+... : fairly new. Contain temp file when the system reboots. This directory is used only by processes.	/run
+"... was the initial user's home directory in the early versions. In CentOs, many commands are stored in this directory instead of /bin and /sbin directories."	/usr
+... contains variables files such as logs users.	/var
+command for change the directory where we are	cd
+take the user in the /etc directory	cd /etc
+Which directory I am in	pwd (print working directory)
+What is a path ?	"It's a unique location of a file in a file system, on a OS."
+Two types of paths in Linux ?	"Absolute : specify the location of a file from root directory. start with a ""/"" Relative : specify the location of a file from current directory. NEVER start with ""/"""
+current directory ?	.
+parent directory ?	..
+"you are in the /etc directory, write two ways to show the content of the ""hosts"" file"	cat hosts cat ./hosts
+"Using ""cd"", how to move to my current user directory (2 ways)"	cd cd ~
+show the content of the parent directory	ls ..
+"Show the content of the root directory, since the user's home directory"	ls ../..
+Show the content of current directory as a treeview	tree
+print only the directories of a path in a tree view	tree -d path
+Print files and directories of a directory with absolute paths	"tree -f ~ ""pathname"""
+show the content of current directory as list	ls -1
+show the content of /etc and /var directories	ls /etc /var
+show the content of /etc directory with the long format option	ls -l /etc
+show content of the current directory with the long format option	ls -l
+List content of current directory with a more human readable view	ls -lh
+With which character start each hidden file ?	.
+list current directory file with hidden files and long format	ls -al
+list current directory files sorting by size desc and long format	ls -lS
+Show the real size of the /etc directory	du -sh /etc/ (disk usage)
+show current directory files as a detailed list sorted by extension asc	ls -lX
+show content of /etc, except the .conf files	ls --hide=*.conf /etc
+show the content of current directory recursively	ls -lR
+run original ls cmd	\ls
+3 timestamps of each file ?	atime read mtime modified ctime metadata related to this file (permissions, owner changed)
+show all the timestamps of /etc/passwd file (show details about the file)	stat /etc/passwd
+show current directory content with atime	ls -lu
+show current directory content with mtime	ls -lt
+show current directory content with ctime	ls -lc
+list the /etc content with max details about the time	ls -l --full-time /etc
+change the timestamp of a file to current date and time	touch filename
+Update the read time of a file	"touch -a ""filename"""
+update the modified date and time of a file	touch -m -t 202301021505.23 filename
+update the read and modified date in one command for a file	"touch -d ""2023-01-02 15:04:10"" filename"
+copy the timestamp of linux.txt file to ubuntu.txt file	touch ubuntu.txt -r linux.txt
+Get detailed infos of a file	"stat ""filename"""
+How to change the change time?	Modify the system data time, then update a file
+get date	date
+get UCT format date	date -u
+list content of current directory by timestamp	ls -lt
+list directory current content with timestamp sorted by access time (and show this access time)	ls -ltu
+show the access time for each component of actual directory sort by name (default sort)	ls -lu
+"how to reverse the sorting instruction of ""ls -lu"" ? (2 ways)"	ls -lu -r ls -lu --reverse
+In Linux, the .... is not mandatory for each file. The ..... contains informations about the type of the file	extension header
+get infos on a file	"file ""filename"""
+rename the file realestate in crowdfunding	mv realestate crowdfunding
+.... are useful only for graphical applications, when we want to open a file	extensions file
+Where find the type symbol of a file ? (2 ways)	ls and see the first characters of each line ls -F and the last symbol indicates the type
+type of file (ls symbol / ls -F symbol) : - file ../.. - directory ../.. - socket ../.. - named pipe ../.. - link ../..	file : / directory : d / / socket : s / = named pipe : p / | link : l / @
+"show the type of each file in the /run directory (don't use ls)"	file /run/*
+open a file with line number (c..... method)	"cat -n ""filename"""
+concatenate host file and host.conf file into a new txt file	cat host host.conf > newfile.txt
+get help into a text file	h
+quit a text file	q
+open a file sort of its content suits to the size of the terminal windows	less filename
+show the ten last lines of /etc/passwd	tail /etc/passwd
+show the 23 last lines of /etc/passwd	tail -n 23 /etc/passwd
+Print the last ten lines of /var/log/syslog beginning from the line number 20	tail -n +20 /var/log/syslog
+See new lines added to a file in real time (dont use watch)	tail -f filename
+print the first ten lines of a file	head filename
+show the 37 first lines of a file	head -n 37 filename
+execute ls command in a loop	watch ls
+execute a command in a loop every 7 seconds and showing the differences	watch -n 7 -d command
+follow in a real time (step 1s) the update of packet exchanged with the web and highlight the differences	watch -n 1 -d ifconfig
+create or update a new file	touch filename
+create a new file with a space in the filename (best practice is to avoid space in file names)	"touch ""file name.txt"""
+"create a new directory called 'dir'"	mkdir dir
+create a directory by displaying some details about the operation performing	mkdir -v directory
+create a directory with another directory inside	mkdir dir1/dir2
+create a sub sub directory even if the parent does not exists	mkdir -p first/second/third
+copy password file in another file in the same directory	cp passwd ./newfile
+copy a file by showing info about process	cp -v file1 file2
+copy a file, but ask for a validation before execution	cp -i file1 file2
+ALWAYS use ... key for auto completion	TAB
+copy three files in a directory	cp file1 file2 file3 directory
+copy the content of /etc in my desktop folder	sudo cp -r /etc ~/Desktop
+"copy a file by preserving the user's ownership and group permissions"	cp -p file destination
+move a file to another directory	mv file dir
+move every text file of /etc to your Desktop	mv /etc/*.txt ~/Desktop
+move dir1 directory to dir2 directory	mv /dir1/ /dir2/
+Avoid to overwrite a file when you move one	mv -n file destination
+move only files that are newer or missing in the destination (useful in shell script)	mv -u files destination
+rename /etc/a.txt to /etc/abc.txt	mv /etc/a.txt /etc/abc.txt
+move and rename a file at a same time	mv oldname.txt newname.txt
+remove /etc/pass.txt and /etc/test.txt	rm /etc/pass.txt /etc/test.txt
+remove a file with a prompt before	rm -i file
+remove a file and show more information	rm -v file
+remove a directory	rm -r directory
+removing two directories with forcing	rm -rf dir1 dir2
+"show all the current txt file to ensure the cmd ""rm *.txt"" will not delete unwanted files"	echo *.txt
+remove a file by erasing it 100 times	shred -vu -n 100 file
+list all files of current directory as list, in a human readable view, sorted by size desc	ls -lhS
+show ten first files of /etc by passing /etc as params	ls /etc | head
+show the last line of ten first lines of /etc/xattr.conf by using parameters	head /etc/xattr.conf | tail -n 1
+"search in /var/log/auth.log all the lines containing ""authentication failure"" (use parameter) process as if this binary file was a text file"	"sudo cat /var/log/auth.log | grep -a ""authentication failure"""
+"show, by using parameters the number of lines returned by the command : sudo cat /var/log/auth.log -n | grep -a ""authentication failure"""	"sudo cat /var/log/auth.log -n | grep -a ""authentication failure "" | wc -l"
+show numbers of lines, words and characters in /etc/passwd	wc /etc/passwd
+show numbers of lines in /etc/passwd	wc -l /etc/passwd
+show numbers of words in /etc/passwd	wc -w /etc/passwd
+displaying the logged-in users	who
+show the number of logged users by using parameters	who | wc -l
+save the result of ls -l cmd in a txt file	ls -l > file.txt
+overwrite the content of file.txt with ifconfig	ifconfig > file.txt
+NOT OVERWRITE but add at the end of file.txt the resut of who	who >> file.txt
+See the file behind a terminal	tty
+redirect the error msg of tail /etc/shadow in error.txt	tail /etc/shadow 2> error.txt
+redirect msg + error msg of tail /etc/passwd /etc/shadow in 2 files	tail /etc/passwd /etc/shadow > ok.txt 2> error.txt
+redirect msg + error msg of tail /etc/passwd /etc/shadow in the SAME file	tail /etc/passwd /etc/shadow > ok.txt 2>&1
+"cut the 1012 in ""vv:ffff:turi:1012"" (use parameters)"	"""vv:ffff:turi:1012"" | cut -d"":"" -f4"
+print AND save to a file the result of ifconfig by overwriting the file	ifconfig | tee file.txt
+print AND save to a file the result of ifconfig by appending the file	ifconfig | tee -a file.txt
+show the kernel version	uname -r
+update the db used by locate cmd	sudo updatedb
+"find quicky ""password"" in the entire system"	locate password
+"find quickly ""pass"" only in the basename"	locate -b pass
+"find quickly a file named exactly 'seahorse.list'"	"locate -b '\seahorse.list'"
+find quickly all files having shadow in their basename	"locate -b 'shadow'"
+find quickly if a file REALLY exists (2 ways)	locate -e file locate --existing file
+find quickly a filename by ignoring case sensitive	locate -i filename
+find quickly a filename by using a regex	"locate -b -r 'regex'"
+"display the path to the 'rm' cmd"	which rm
+"display all the path of 'find' cmd"	which -a find
+find in real time the file a.txt in the current directory	find . -name a.txt
+find a.txt file in real time in the current directory with case sensitive option	find . -iname a.txt
+find in real time in current directory all files starting by finance	"find . -type f -name ""finance*"""
+find in current directory in real time all files named todo.txt and delete it	find . -type f -name todo.txt -delete
+find in real time in current directory a file by name and execute -ls too	find . -name file -ls
+find in real time all directories in /etc	find /etc/ -type d
+find in real time in /etc all directories with a max depth of 2	find /etc -type d -maxdepth 2
+find in real time in /var all files greater than 10m and execute ls	find /var/ -type f -size +10M -ls
+find in real time in /var all file between 5M and 10M	find /var -type f -size +5M -size -10M
+find in real time in /var all files modified in the last 24 hours + ls option	find /var -type f -mtime 0 -ls
+find in real time in /var all files modified between 1 and 2 days ago + ls option	find /var -type f -mtime 1 -ls
+find in real time in the current directory all files modified in last hour	find . -type f -mmin -60
+find in real time in /var all files belonging to gdm user + ls	find /var -type f -user gdm -ls
+find in real time in /etc all files that doesnt belong to the root group + ls	find /etc -type f -not -group root -ls
+find all the files in /etc modified in the last 24h and execute a cat onto (in order to show their content)	sudo find /etc -type f -mtime 0 -exec cat {} \;
+find all files in /etc modified since 1 week and copy them to /root/backup	find /etc -type f -mtime -7 -exec cp {} /root/backup \; (7 means exactly 7 days, -7 means in the last 7 days)
+find all files in /etc modified since 1 week and copy them to /root/backup BUT show a prompt that ask for each file if we want copy it	find /etc -type f -mtime -7 -ok cp {} /root/backup \;
+"find the pattern 'user' in /etc/ssh/ssh_config file"	grep user /etc/ssh/ssh_config
+"find the pattern 'command line' in /etc/ssh/ssh_config file"	"grep ""command line"" /etc/ssh/ssh_config"
+"search by ignoring case sensitive ""SSH"" in /etc/ssh/ssh_config"	grep -i SSH /etc/ssh/ssh_config
+"search by printing line number and by ignoring case sensitive ""SSH"" in /etc/ssh/ssh_config"	grep -i -n SSH /etc/ssh/ssh_config
+"search all words 'body' in /etc/passwd"	grep -w body /etc/passwd
+"search all pattern NOT containing ""kernel"" in /var/log/dmesg"	grep -v kernel /var/log/dmesg
+search root in the binary file /var/log/auth.log like it was a text file	grep -a root /var/log/auth.log
+search for the pattern 127.0.0.1 in all files of the directory /etc	grep -R 127.0.0.1 /etc
+search for the pattern 127.0.0.1 in all files of the directory /etc by deleting all error msgs on the output	grep -Rs 127.0.0.1 /etc
+"search the number of pattern ""error"" in /var/log/syslog (2 ways)"	grep -c error /var/log/syslog grep error /var/log/syslog | wc -l
+search error in kernel file by using parameters	dmesg | grep error
+search error in kernel file by using parameters and print the 4 lines before and 5 lines after the found line	dmesg | grep -A 4 -B 5 error
+search error in kernel file by using parameters and print the 3 lines before and after the found line	dmesg | grep -C 3 error
+display al the open ports	sudo netstat -tupan
+search all the programs listening on the port 53	sudo netstat -tupan | grep 53
+list all files in /etc by showing the type of each file	list -RF /etc
+list all files (recurring mode) in /etc by showing the type of each file and : - exclude all directories by symbol - exclude all empty lines with a regex - sort by name in reverse	"sudo ls -RF /etc | grep -v / | grep -v ""^$"" | sort -r"
+Show all the ascii characters embedded into ls command (2 steps)	"""which ls"" will return : /usr/bin/ls then do : strings /usr/bin/ls"
+printing characters on the partition /dev/sda5 using the low level file (search in all files)	sudo strings -a /dev/sda5
+search with low level directly into the physical machine memory	strings /dev/mem
+compare two files bytes by bytes and show the first line of mismatch	cmp a b
+compare two files by hash	sha256sum file1 file2
+make a deeper compare between two text files by ignoring blank lines, whitespaces and case differences in file context	diff -Bwi a b (Blank line, white space, i case)
+make comparison between two files in context mode	diff -c file1 file2 (context mode shows the differences in a detailed view, whereas unified mode (-u) displays infos in a more concise form)
+make a full detailed comparison between two files line by line	diff -y file1 file2
+ping the public dns of google with one packet	ping -c 1 8.8.8.8
+list the content of the current directory	ls
+list the content of the /etc/ repo	ls -l /etc/
+combine the short options in : ls -l -a	ls -la
+list the content of the current directory (hidden files included)	ls -a
+open the manual for the ls command	man ls
+Navigate into a terminal file go to the beginning : ? go to the end : ? go forward : ? go backward : ?	g G Ctrl + F Ctrl + B
+"In man pages. search ""text"" from the beginning : ? search ""text"" from the end : ? go forward in the result : ? go backward in the result : ?"	/text ?text n N
+display the path of the df command	type df
+show the help for shell builtin command (like cd)	help cd
+show help for both shell builtin and executable file commands	"""command name"" --help"
+search for a specific command	"man -k ""command name"""
+search all command enabling to copy files	"man -k ""copy files"""
+"show all commands starting with ""if"""	"type ""if"" and DOUBLE TAB key"
+"show all directories and files starting by ""pa"" in the etc directory"	ls /etc/pa and double type TAB (ALWAYS USE AUTO COMPLETION IN LINUX !!!!!! )
+open the bash history file	cat .bash_history
+show the max num of line in bash history file	echo $HISTFILESIZE
+show bash history file with line number	history
+show the max line number for the history command	echo $HISTSIZE
+run the command of the line 25of the memory history file	!25
+run the previous command (2 ways)	up arrow !!
+"search the last 'ping' command in the history and run it"	!ping
+"print the last 'ping' command from the history"	!ping:p
+find a command in the history	Ctrl R + type the researched command
+leave the history searching mode	ctrl G
+delete the command in the history at line 50	history -d 50
+clear all history	history -c
+list the content (as list) of the /etc/ repo	ls -l /etc/
+Navigate into a terminal file go to the beginning : ? go to the end : ? go forward : ? go backward : ?	g G Ctrl + F Ctrl + B
+"In man pages. search ""text"" from the beginning : ? search ""text"" from the end : ? go forward in the result : ? go backward in the result : ?"	/text ?text n N
+search for a specific action among the existing commands	"man -k ""command name"""
+"write the value 'ignoreboth' in the variable HISTCONTROL and save it in the .bashrc file"	"echo ""HISTCONTROL=ignoreboth"" >> .bashrc"
+Add the time and date for each command in history and made this setting persistent	"echo ""HISTTIMEFORMAT=""%d/%m/%y %T"""" >> .bashrc"
+3 words for define a full privileges user	root, superuser, administrator
+How give root access in the terminal	sudo su (superuser do substitute user)
+Get info on actual user	id
+how to logout (2 ways)	exit ctrl D
+activate the root working environment	sudo su -
+run a command as root	"sudo ""command"""
+how to flush the sudo password caching system (by default password is cached for 5 minutes after each sudo command)	sudo -k
+change the password for root user	sudo passwd root
+Show the content of root directory (shortest manner)	ls /
+show the content of root home directory	ls /root/
+where are located root directory of others users	/home
+run command with no traces (2 ways)	put a space before the command (ubuntu) set HISTCONTROL variable to ignorespace, then put a space before the command
+using gzip, archive and compress /etc content in a file, and show infos to the screen	sudo tar -czvf etc.tar.gz /etc (always put f at the end)
+using bzip, archive and compress content of /etc. showing info to the screen	tar -cjvf etc.tar.bz2 /etc (bzip is slower but compress in a smaller size)
+archive and compress /home/user1 with gzip and showing info + excluding mkv and zip files	"tar --exclude='*.mkv' --exclude='*.zip' -czvf user1.tar.gz /home/user1"
+extract the archive etc.tar.gz in the current directory	tar -xzvf etc.tar.gz
+extract the bzip archive etc.tar.bz2 in /backup directory	tar -xvf etc.tar.bz2 -C /backup
+see the content of an gzip archive	tar -tf archive
+search sshd_config files inside files of an archive	tar -tf archive | grep sshd_config
+"create an archive of /etc with the current date in the file name like 'etc-2020-08-01.tar.bz2'"	sudo tar -cjvf etc-$(date +%F).tar.bz2 /etc
+extract online compress file	wget archiveurl
+Others command for zip and unzip (4 ways)	gzip gunzip bzip2 bunzip2
+Each file on the disk has a data structure called ... or ... associated with it	index node inode
+Index node or inode stores ... information about the file such as the type, file’s permission, file’s owner and group owner, timestamp information, file size and so on	metadata
+inode actually contains all file information except the ... and the ...	file content name
+Each inode is uniquely identified by an integer number called ...	inode number
+show inode number for each file of current directory	ls -i
+list inodes of each file of the current directory	ls -l
+Hard link is ...	an association between the file structure (inode) and the filename
+The ... can be accesed since several hard links	same file
+Show the number of hard link for a file	stat file (link property)
+create a new hard link b.txt for the a.txt file	ln a.txt b.txt
+For one inode, we can have ... hard link	several
+find all the soft link for the inode number 408368 in the current directory	find . -inum 408368
+we cannot create hard link on different ... or ...	partitions disks
+... allow files, programs, scripts to access in different directories, without making copies, to the same file	hard links
+find all files in /usr with more than one link	find /usr -type f -links +1
+others names for soft links : ... , ...	symbolic links, symlinks
+... is an association between a inode structure and a file name into a directory	hard link
+... is just a special file type that point to or contain a reference to another file or directory	symlink
+... references the file inode and ... references another file	hard link symlink
+if you delete a ..., the remaining file point to the same space or inode in the file system, and they still contain the data stored on the disk	hard link
+if you delete a file where a... points to,he ... will be useless or be broken	simlink
+create a simlink	ln -s /etc/passwd ./pswd
+show the link behind the soft link ./pswd	ls -l ./pswd
+display all the running processes	ps aux
+create hardlink called p.txt for the file processes.txt	ln processes.txt p.txt
+create simlimk called symlink_p.txt for the file processes.txt	ln -s processes.txt symlink_p.txt
+if we move a file from a directory to an another, all the .... will be broken	symlinks
+... are used INTENSIVELY by many services like web server like Apache 2	symlinks
+we cannot create hard link to a ...	directory
+A ... can cross the file system. A ... is tied to the partition or file system	symlink hardlink
+"the permission of the ... doesn't matter because the permissions of the linked file will be checked"	symlink
+list recursively all files existing in /etc	ls -R /etc
+list all files in current directory with their types at the end of their name	ls -F
+list all recursively files in the /etc directory and their types as symbol at the end	ls /etc -RF
+show infos about /etc directory in a long list format	ls -ld /etc
+show all files, including hidden from the user home directory i one command	ls -la ~
+change only the mtime and the ctime of linux.txt to the current system date/time	touch -m linux.txt
+list content of /var/log with access time and sorted by name desc	ls /var/log -lu -r
+show the content of /etc/group starting with line 5	tail -n +5 /etc/group
+dc56f4620392453683bcb43c2519872e-oa-1										
+dc56f4620392453683bcb43c2519872e-oa-2										
+dc56f4620392453683bcb43c2519872e-oa-3										
+compress /etc in a simpe archive (no gzip, bzip, etc...)	tar -cvf etc.tar /etc
+extract the simple archive etc.tar	tar -xvf etc.tar
+Find all files that have the change time in the last minute in the newly created directory and delete them automatically.	find -type f -cmin -1 -delete
+list the two interesting files for user accounts management	ls /etc/passwd /etc/shadow
+... contains all basic informations of user accounts of the system	/etc/passwd
+each ... of /etc/passwd represents ... of .... user or .... user	line a single account type normal system
+Describe each fields of this /etc/passwd line for the list user account : list:x:38:38:Mailing List Manager:/var/list:/usr/sbin/nologin	"user's login name x means a password has been assigned but it is registered in another file (shadow file) user id group id comment user's home directory default shell (if equals to 'false' or 'nologin' mean it is a system user not allowed to login into the system)"
+/etc/shadow file contains ... for each user account and is only readable by ... user account	passwords root
+/etc/shadow lines contain each . comma separated fields Describe each component of this line : vincent:!:19345:0:99999:7:::	9 username (this field allows a link with /etc/password file) represents the password (if equals to ! or *, the user wont be able to connect by authentication) 7 remaining fields are about the password expiration
+/etc/shadow file, password field structure ? and detail each component	$type$salt$hash TYPE: cryptographic algorythm used SALT : enforce the uniqueness of output hash (the same password will give different hashes because of the salt). Salt is random but not secret. HASH : hash of the password
+/etc/shadow file, password field, $type > values possibles ?	1 MD5 2a Blowfish 2y Eksblowfish 5 SHA-256 6 SHA-512
+there are two types of groups that a user can belong to	primary group secondary group
+primary group : the id is stored in ... and the group name in ...	/etc/passwd /etc/group
+secondary group : stored in ...	/etc/group
+When a user create a file, the user will be the ... of the file and its ... will be the group owner of the file	owner primary group
+In Linux, a file is owned by both ... and the ...	user group
+search after the entries for student in the user file	grep student /etc/passwd
+search the primary group for the user vboxuser in the right file (result of /etc/passwd : vboxuser:x:1000:1000:vboxuser,,,:/home/vboxuser:/bin/bash)	grep 1000 /etc/group
+find all the secondary groups for the user vboxuser with less	less /etc/group /vboxuser
+list all the groups the actual user belongs to	groups
+"the primary group of a user is at the ... position when we run 'groups user'"	first
+list all the groups the user root belongs to	groups root
+print detailed infos about the user and his groups (id and names)	id user
+create new user with the simplest manner	sudo useradd u1
+when a user is created with default option, which file contains default values for him	etc/default/useradd
+the file ... contains options for the shadow password, password expiration policies, range user ids, etc...	etc/login.defs
+set the password for a new user	sudo passwd username
+create a user by giving the most common options manually (home directory, description, shell, secondary groups, password expiration date)	"sudo useradd -m -d /home/jean -c ""DevOps Engineer"" -s /bin/bash -G admin,mail -e 2025-12-12 jean"
+change the expiry policy for a system user + show actual informations	chage -l username
+"sometimes you need an user account only to run a service for a server. every ... or ... in Linux need this type of user and it is recommended they are not root. that's why you can have some user with shell option as ... or ..."	daemon process /usr/sbin/login /bin/false
+On ubuntu, adduser is more interactive than ... command. No differences about features provided between.	useradd
+All users information are stored in 5 files	etc/passwd etc/shadow etc/group etc/gshadow etc/login.defs (contains default options for new users)
+change the comment field for the vboxuser	"sudo usermod -c ""Linux Sysadmin"" vboxuser"
+change the primary group to daemon for james	sudo usermod -g daemon james
+if you update secondary groups for a user with ..., be careful to ..., otherwise he will be removed from these groups	usermod include existing groups you want he continues to belong
+"add james to the sudo group as secondary by preserving actual user's group assignments"	sudo usermod -aG sudo james
+delete a user and all associated files and group with the same name than the user (if no other users are members of this group)	sudo userdel user
+Remove a user and its home directory	sudo userdel -r user
+admin predefined name is ... on ubuntu/debian, ... on centos/redhat	sudo wheel
+opening a session as thor user	su thor
+add a new group called engineering	sudo groupadd engineering
+update the name of engineering group to engineers	sudo groupmod -n engineering engineers
+delete the group tmpusers	sudo groupdel tmpusers
+It is not possible to delete the primary group of the user, before first ...	removing the user
+... is the user who initially logs in	RUID real user id
+... is the current user in the shell	EUID
+show EUID (2 ways)	whoami id -un
+display the name of the RUID	who
+print the effective user and its groups	id
+... is the file which logs the current user on the system	/var/run/utmp
+... is the history file for the utmp file	var/log/wtmp
+check is the ssh service is running	sudo systemctl status ssh
+in order to communicate by ssh between two vms, you have to put network interfaces on ... for both	bridge mode
+connect to another vm via ssh	ssh user@ipadr
+show who is logged in and what they are doing	w
+show info about users connected and their load average (2 ways)	uptime w
+show listing of last logged in users useful for track ... or possible ...	user activities security breaches
+last command read the ... file and print information log in and log out of users	/var/log/wtmp
+show last activity for vboxuser	last vboxuser
+... (...) specify who can access, change or execute a fie on a Linux system	file permissions file modes
+... and ... are used by root to change the ownership of a file or directory	chown chgrp
+for each file, permissions are assigned to 3 different categories of users : ...	file owner group owner other (anyone else or the whole world)
+3 permissions type exist : ...	read (r) write (w) execute (x)
+view the permission of /etc/passwd file (2 ways)	ls -l /etc/passwd stat /etc/passwd
+each file or directory has an ... and a ... . By default, the ... is the user who create the file and the ... is the primary group of that user.	owner group owner group
+remove all perm on a file (octal mode)	sudo chmod 000 file
+the files read and write permissions of a file are only for ... user	non privileged
+a file with execute permission is a .... or ....	shell script linux command
+see for /etc/passwd octal and symbolic notation of file permission	stat /etc/passwd
+the number that represents the permission in ... can be either a ... number with digits from 0 to 7. the leading zero can be omitted	base 8 3 or 4 digit
+when a 3 digit number is used, first digit : ... second digit : ... third digit : ...	permission of file owner permission of file group permission of the others class
+read, write, execute have their own fixed number value for the Octal Notation r = . w = . x = . - = .	r = 4 w = 2 x = 1 - = 0
+... is the command user to change permissions of a file using the ... or ... notation. only the ... or ... can change the permission	chmod symbolic numeric root file owner
+chmod [...][...][...] filename who : ..., ..., ... Operation : ..., ..., ... permissions : ., ., .	who OPERATIONS permissions who : u user, g group, o others operations : - remove, + add, = equals permissions : r, w, x
+user.txt : -rw-rw-r-- 1 vboxuser vboxuser 44 Jan 24 10:05 user.txt, remove the write permission for the user using the symbolic notation	sudo chmod u-w user.txt
+user.txt : ----rw-r-- 1 vboxuser vboxuser 44 Jan 24 10:05 user.txt, give all permissions to the owner using the symbolic notation	sudo chmod u+rwx user.txt
+user.txt : -rw-rw-r-- 1 vboxuser vboxuser 44 Jan 24 10:05 user.txt, remove the read permission for the owner using the symbolic notation add the execute permission for the group using the symbolic notation + add verbose	chmod -v u-r,g+x user.txt
+user.txt : ----rw-r-- 1 vboxuser vboxuser 44 Jan 24 10:05 user.txt, give execute permissions to the owner and group using the symbolic notation	sudo chmod ug+x user.txt
+user.txt : -r--rw-r-- 1 vboxuser vboxuser 44 Jan 24 10:05 user.txt, delete read permissions for everyone using the symbolic notation (2 ways)	sudo chmod a-r user.txt sudo chmod ugo-r user.txt
+user.txt : ----rw-r-- 1 vboxuser vboxuser 44 Jan 24 10:05 user.txt, give read and write permissions to the owner and group using EQUALS and using the symbolic notation	sudo chmod ug=rw user.txt
+user.txt : ----rw-r-- 1 vboxuser vboxuser 44 Jan 24 10:05 user.txt, remove all permissions to the group using EQUALS using the symbolic notation	sudo chmod g= user.txt
+user.txt : ----rw-r-- 1 vboxuser vboxuser 44 Jan 24 10:05 user.txt, give all permissions to everyone using the numeric notation	sudo chmod 777 user.txt
+user.txt : ---------- 1 vboxuser vboxuser 44 Jan 24 10:05 user.txt, give read and write permissions to the owner using the numeric notation	sudo chmod 600 user.txt
+user.txt : ----rw-r-- 1 vboxuser vboxuser 44 Jan 24 10:05 user.txt, give read permissions to everyone using the numeric notation	sudo chmod 444 user.txt
+change file permission of all files in /etc by giving read and write permission to the owner only (use recursive + octal mode)	chmod -R 600 etc/
+give the permissions of file user.txt to the file new.txt	sudo chmod --reference=user.txt new.txt
+.... permission on a directory just means we can see the content by running ls	read
+on directories. the ... permissions has effects only if we have the ... permission	write execute
+the ... permissions on a directory means to have access to its ...	execute contents
+"the permission on the .... directory are more important than the file's permissions"	parent
+set the permission of all files of user home directory to 640 and the permission of all directories to 750 (2 commands)	find ~ -type f -exec chmod 640 {} \; find ~ -type d -exec chmod 750 {} \;
+show infos about cpu	lscpu
+change the owner of cpu.txt file to franky	sudo chown franky cpu.txt
+change the owner of cpu.txt file to the userid 1000 (by avoiding missmatch with potential 1000 user names)	sudo chown +1000 cpu.txt
+change user and group of cpu.txt file using chown command (2 ways)	sudo chown franky:daemon cpu.txt sudo chown franky.daemon cpu.txt
+change the group owner of cpu.txt to sudo group (2 ways)	sudo chgrp sudo cpu.txt sudo chown :sudo cpu.txt
+3 extra file permissions for file or directory : ..., ..., ...	SUID set user id SGID set group id Sticky bit
+By default, linux commands and programs run with the exact permissions of the user that execute the command. When an executable file with SUID is executed, the resulting process will have the permission of ...	the owner of the command
+Sometimes, it is required to temporary treat user as root and this is where the .... is useful	SUID
+set SUID on cat command (sy;bolic and octal) result of which cat : /usr/bin/cat result of stat : 0755	sudo chmod 4755 /usr/bin/cat sudo chmod u+s /usr/bin/cat
+SUID. ... means there is no owner executable permissions put on this file	S
+SUID is userful for non privileged users to ...	change their password
+find all files in /usr/bin having at least the permission SUID set up	find /usr/bin -type f -perm -4000
+... is mainly set on directories. all file or directories created inside will be owned by the same group owner of the directory where SGID was configured. this is useful in ..., which are directories that are writable at the group level	SGID creating shared directories
+set the SGID on /programming folder (actual permissions are 770) symbolic and octal mode	sudo chmod 2770 /programming sudo chmod g+s /programming
+"the sticky bit is applied to ... in a shared directory, it prevents that user ... anyone else's files"	directories delete
+set the Sticky on /temp folder (actual permissions are 770) symbolic and octal mode	sudo chmod 1770 /temp sudo chmod o+t /temp
+... enables to see the default permissions given to a file or directory created in linux	Umask
+... is the default octal file permission ... is the default octal directory permission	0666 0777
+default permission for file and directories are calculated by substracting umask value ... to default file permission ... and default folder permission ...	002 0666 0777
+change umask value to 0022	umask 0022
+... define the property of the files	attributes
+file attribute has 2 states : ... and ...	set cleared
+list attributes of the file in the sub directories of the current directory	lsattr
+--------------e------- ./linux e indicates a ... attribute - indicates a ... attribute e means ...	set cleared extended format (the file use extends for mapping the block on disk)
+"add attribute 'append only' to user.txt file"	sudo chattr +a user.txt
+Attributes : a : ... A : ... i : ...	append only no atime updates immutable
+a running instance is called a ... and it runs in its own ... each time you ..., a new process starts	process memory space execute a command
+a process is an ... as opposed to a program, which is considered as a passive entity	active entity
+a new process is created only when runnning an ... (not when running ...)	executable file shell builtin commands
+process properties (4)	PID process id (unique positive integer) user group priority / nice
+types of processes (5)	parent child daemon zombie (defunct) orphan
+check if a command is a executable file or a Shell builtin what is rm ? what is cd ?	type rm is an executable file cd is shell builtin
+multiple thread can exist into the ...	same process
+processes and ... are synonyms	tasks
+display processes running in the current terminal	ps
+ps stands for	process status
+pid is the id automatically assigned and used by the ... to uniquely identify ...	kernel each process
+... allows to interact with the process	PID
+... the name of the controlling terminal for the process	TTY
+ps command ... allows to interact with the process ... is the name of the controlling terminal for the process ... shows the command that started the process	PID TTY CMD
+list all processes	ps -e
+display all processes in a formatted way with more details	ps -f
+show the number of all processes running	ps -e | wc -l
+PPID	process parent id
+STIME	starting time
+if you see a .... in TTY column, it is probable a ... or a ...	? daemon service
+write ps aux in another way	ps -aux
+5 new columns showed with ps aux commands are	% CPU % MEM VSZ visual memory size (in kb) RSS (size of the physical memory that the process is using) STAT process state using a code
+ps aux. column STAT, possible values ?	S sleeping R running Z zombie T stopped I idle kernel thread < high priority N low priority
+show the process with aux sorted by % of memory ascending and show results according the size of the screen	ps aux --sort=%mem | less
+show the process with aux sorted by % of memory descending and show results according the size of the screen	ps aux --sort=-%mem | less
+see the process of the vboxuser user	ps -f -u vboxuser
+check if a specific daemon or service is running (sshd for instance) (very common feature) (dont use pgrep)	ps -ef | grep sshd
+check by his name if daemon sshd is running by returning only its PID	pgrep sshd
+... is a concat with ps and grep to avoid to lookup after the command itself executing	pgrep
+check if daemon sshd is running by returning only its PID AND its name	pgrep -l sshd
+search processes named sshd for the user vboxuser	pgrep -u vboxuser sshd
+show running process under a tree	pstree
+with pstree, the number for some lines represents the number of ...	branches
+show process running under a tree by desactivating the branches number	pstree -c
+show dynamically processes running	top
+top command show the ... area and the ... area	summary task
+top command > summary area > average value for a healthy system should less than ...	1
+top command > in the task area, running processes are ...	highlighted
+top command > show detailed summary for cpus	1
+top command > show cpu as detailed percentage + graph	t
+top command > change the memory and swap view	m
+top command > change the delay of refresh to 5 seconds	d, then type 5
+top command > refresh the screen manually	space
+top command > highlight the running process and the columns used to sort the processes	y and x
+top command > alternate bold or text highlighting	b
+top command, in x y mode change the column used for the sorting	< or >
+top command, during x y mode. reverse the sort on the column selected	R
+top command, during x y mode, change the unit	e
+top command, sort by processor or cpu	P
+top command > sort by memory	M
+top command > see the processes for a single user	u
+top command > access to all columns add/remove a column move the position of a column	F space right arrow then up/down
+top command > save the new setup of the form	W
+put in a txt file the result of top command with 3 iterations, a delay of 1 second and in batch mode	top -d 1 -n 3 -b > processes.txt
+see differences between each refresh of top command for rsyslogd process (iterations has been registered in a file)	pgrep rsyslogd file
+... is a process viewer more appealing than to, but not installed by default	htop
+... command send a signal to a process. when no signal is specified in the command, kill send ... or ... signal	kill 15 SIGTERM
+show all signal disposable with the kill command	kill -l
+kill > a signal is identified either by his ... or by his ...	number name
+a signal is an ... sent to a process that determine how the process shold behave	asynchronous notification
+the ... command invitate a process to execute an action. invitate because the process can ... for ...	kill decide to ignore these instructions some kill signals
+find the pid of gedit process (dont use pidof)	pgrep -l gedit
+find quickly and all the firefox process	pidof firefox
+kill the process id 14757 by using the number of sigint	kill -2 14757
+kill all firefox processes by using the name of signal 2 (pidof firefox 14888 15000 13888)	kill -INT 14888 15000 13888
+kill all firefox process by using the entire name of signal 2 and by using a variable for finding pids of firefox	kill -SIGINT $(pidof firefox)
+where process id of daemon are saved ?	/var/run
+send invitation to sshd to reload by using variables and name of the signal AND number (two commands)	sudo kill -1 $(pidof sshd) sudo kill -SIGHUP $(pidof sshd)
+for some signal sent by the kill command, the process can act in 3 different ways	kill itself kill self with delay the time to clean its resources ignore the signal
+... is a soft kill because processes can decide to ignore it	SIGTERM
+... is the hard kill of kill signals	SIGSKILL
+kill a process id with a hard kill by using number	kill -9 pid
+kill all processes of firefox by using the name of the process, not the pid	killall firefox
+kill all processes of firefox by using just a part of the process name	pkill firef
+.... are started by the user and not by the system services and while they are running the user cannot ...	foreground process start another process from the same terminal
+two types of process	foreground background
+by default, every process launched work in the ...	foreground
+example of foreground process that prevent us tu use the terminal during 5 seconds	sleep 5
+.... are non interactive and executed by system services	background processes
+run the sleep 20 command as a background process	sleep 20 &
+even if the background process runs in background, its ... will be prompted on the same terminal. for avoiding this thin, you can ...	outputs redirect output and error to a file
+run the ping -c 1 8.8.8.8 as background by redirecting outputs to the common directory used in this case	ping -c 1 8.8.8.8 > /dev/null 2>&1 &
+... is a special file called null devices and is locally called the ... because it digest immediately everything put to it	/dev/null black hole
+each background process is identified by two numbers : ... and ...	job id process id PID
+display job ids of running background process	jobs
+show the job ids with the process ids	jobs -l
+jobs is local, it is maintained by the current shell, so you can have the ... in different shell sessions	same current job id
+the process id is maintained by .... it has a global scope.	the system kernel
+bring the background process sleep with jobid 1 to the foreground	fg %1
+suspend the process running in the foreground	ctrl z
+put the process with jobid 5 to the background	bg %5
+resume the stopped jobid 7 in the foreground	fg %7
+running sleep 30 in the background without being impacted by terminal closure, log out, etc...	nohup sleep 30 &
+nohup redirect the command output to a file called ... in the working directory	nohup.out
+... and ... are useful terminal avoiding being terminated by logout, etc...	screen tmux
+the owner of a command launched in the terminal with 0755 as permissions and root as owner is ...	the user that runs this command
+the owner of a command launched in the terminal with 4755 as permissions and root as owner is ...	root because its the owner of the command and the SUID is set
+the owner of a command launched in the terminal with 4755 as permissions and root as owner is ...	root because its the owner of the command and the SUID is set

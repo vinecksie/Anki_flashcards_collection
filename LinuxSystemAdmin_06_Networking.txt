@@ -45,3 +45,10 @@ ssh installation command on CentOS	sudo dnf install openssh-server openssh-clien
 ssh server config file	/etc/ssh/sshd_config
 ssh client config file	/etc/ssh/ssh_config
 check with ps and grep is ssh is running	ps -ef | grep ssh
+Check if the daemon of ssh is running by using ps and parameters	ps -ef | grep sshd
+SSH as vince user, connect to ssh server 192.168.1.88 with vbox user (2 ways)	ssh vbox@192.168.1.88 ssh -l vbox 192.168.1.88
+SSH the client uses a ... to identify the server and prevent possible ... in the future	cryptographical fingerprint man in the middle attack
+SSH the ... is randomly generated when the ... is set up and it is used to identify the server we are connecting to. it will be saved on the client in a file called ... in	host key ssh server no_host ./ssh in user home directory
+SSH how disconnect to the server (2 ways)	exit ctrl d
+SSH default port	22
+SSH connect to 192.168.1.88 with vbox user on the port 22	ssh -p 22 -l vbox 192.168.1.88
