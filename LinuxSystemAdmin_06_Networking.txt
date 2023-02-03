@@ -52,3 +52,18 @@ SSH the ... is randomly generated when the ... is set up and it is used to ident
 SSH how disconnect to the server (2 ways)	exit ctrl d
 SSH default port	22
 SSH connect to 192.168.1.88 with vbox user on the port 22	ssh -p 22 -l vbox 192.168.1.88
+SSH location of known host file	.ssh/known_hosts
+install telnet on CentOS	sudo dnf install telnet
+the firewall on linux is called ...	netfilter iptables
+check firewall rules	sudo iptables -vnL
+... (...) is a user friendly front end for mananing iptables firewall rules in a easy way	ufw (uncomplicated firewall)
+check the status of ufw on Ubuntu	sudo ufw status verbose
+ubuntu enable ufw	sudo ufw enable
+List all application profiles available in a server	sudo ufw app list
+Configure ufw to allow incoming ssh connections	sudo ufw allow ssh
+SSH launch a connection in verbose mode	ssh -v username@serverip
+SSH increase the verbose mode of the command ssh -v user@serverip	ssh -vv user@serverip
+Ubuntu log file	/var/log/auth.log
+Centos file log	/var/log/secure
+open manual for sshd config file	man sshd_config
+FW add a rule enabling to filter access to sshd only for ip 2.2.4.5 on the port 2276	iptables -A INPUT -p tcp --dport 2276 -s 2.2.4.5 -j ACCEPT iptables -A INPUT -p tcp --dport 2276 -j DROP
