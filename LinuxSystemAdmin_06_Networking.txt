@@ -67,3 +67,15 @@ Ubuntu log file	/var/log/auth.log
 Centos file log	/var/log/secure
 open manual for sshd config file	man sshd_config
 FW add a rule enabling to filter access to sshd only for ip 2.2.4.5 on the port 2276	iptables -A INPUT -p tcp --dport 2276 -s 2.2.4.5 -j ACCEPT iptables -A INPUT -p tcp --dport 2276 -j DROP
+... copy files over the network using ssh	scp
+scp can be used in 3 differents ways :	- copy from a computer to a remote server - copy from a remote server to a computer - copy from a remote server to another remote server (in this case, data are transferred directly between servers)
+copy ip.txt file on server 192.168.1.88 with user vince with the default ssh listening port in the home directory of the user by default	scp -P 22 ip.txt vince@192.168.1.88:~
+copy ip.txt file on server 192.168.1.88 with user vince with the default ssh listening port in the home directory of the user by default RENAME THE FILE ipcopy.txt	scp -P 22 ip.txt vince@192.168.1.88:~/ipcopy.txt
+copy Devices directory on server 192.168.1.88 with user vince with the default ssh listening port in the home directory of the user by default	scp -r -P 22 Devices/ vince@192.168.1.88:~
+copy Devices directory on server 192.168.1.88 with user vince with the default ssh listening port in the home directory of the user by default BY PRESERVING modification/access time	scp -rp -P 22 Devices/ vince@192.168.1.88:~
+to copy a file with scp, the user account used must have at leat the ... permissions	read
+Be careful with scp, ssh will .... without any warnings	overwrite file
+copy the file /etc/passwd from the remote server 192.168.0.20 (user vbox) to the /home/vince/Desktop directory	scp vbox@192.168.0.20:/etc/passwd /home/vince/Desktop
+... is more complex than scp, but scp is generally faster	SFTP
+... (...) hasd nothing to do with the classical FTP protocol	SFTP (SSH file transfer protocol)
+... and ... are implementations of sftp	winscp filezilla
