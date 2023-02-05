@@ -77,5 +77,15 @@ to copy a file with scp, the user account used must have at leat the ... permiss
 Be careful with scp, ssh will .... without any warnings	overwrite file
 copy the file /etc/passwd from the remote server 192.168.0.20 (user vbox) to the /home/vince/Desktop directory	scp vbox@192.168.0.20:/etc/passwd /home/vince/Desktop
 ... is more complex than scp, but scp is generally faster	SFTP
-... (...) hasd nothing to do with the classical FTP protocol	SFTP (SSH file transfer protocol)
+... (...) has nothing to do with the classical FTP protocol	SFTP (SSH file transfer protocol)
 ... and ... are implementations of sftp	winscp filezilla
+... is a command that synchronizes file and directory between two systems that can be local or remote	rsync
+make a backup of /etc by creating a new directory /etcbkp in the home user directory with verbose mode	sudo rsync -av /etc/ ~/etcbkp/
+make a backup of /etc by creating a new directory /etcbkp in the home user directory with NON verbose mode	sudo rsync -aq /etc/ ~/etcbkp/
+rsync do by default ... copy	incremental
+make a backup of /etc by creating a new directory /etcbkp in the home user directory with verbose mode and EXACT MIRRORING if some files are deleted in the source	sudo rsync -av --delete /etc/ ~/etcbkp/
+... doesnt matter. /etc equals /etc/	trailing slashs
+with rsync, ... means the content of the directory will be copied. if the ... is omitted, a new directory will be copied	trailing slash
+make a backup of /etc by creating a new directory /etcbkp in the home user directory with verbose mode by excluding the directory dir1 and all mkv files (2 steps)	"create a file 'excludefiles.txt' including : dir1/ *.mkv rsync -av --exclude-from='home/vince/excludefile.txt' /etc/ ~/etcbkp/"
+it is recommended to always use ... paths with rsync	absolute
+copy my_project/ content to backup/ by excluding png files and test.pdf file	"rsync -av --exclude='*.png' --exclude='test.pdf' my_project/ backup/"
