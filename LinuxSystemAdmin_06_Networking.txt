@@ -1,5 +1,3 @@
-#separator:tab
-#html:false
 reboot the system [[typebox:Back]]	reboot
 ifconfig and ... are similar. the second is newer on the distributions [[typebox:Back]]	ip
 list all the network interface and their ip adresses (2 ways) [[typebox:Back]]	ifconfig -a ip address show
@@ -18,20 +16,20 @@ unactivate the enp0s3 interface (2 ways) [[typebox:Back]]	ifconfig enp0s3 down i
 activate the enp0s3 interface (2 ways) [[typebox:Back]]	ifconfig enp0s3 up ip link set enp0s3 up
 set up an ip address on the interface enp0s3 using ifconfig [[typebox:Back]]	ifconfig enp0s3 192.168.0.111/24 up
 set new ip address on enp0s3 interface with ip command (2 cmds) [[typebox:Back]]	ip a del 192.168.0.111/24 enp0s3 ip a add 192.168.0.111/24 enp0s3
-create a new default gateway (2 steps in 2 ways) [[typebox:Back]]	route del default gw 192.168.0.1 route add default gw 192.168.0.2  ip route del default ip route add default via 192.168.0.2
-change the mac adr of the interface enp0s3 (2 ways) [[typebox:Back]]	ifconfig enp0s3 down ifconfig enp0s3 hw ether 00:03:27:51:45:34 ifconfig enp0s3 up  ip link set dev enp0s3 address 00:03:27:51:45:34
+create a new default gateway (2 steps in 2 ways) [[typebox:Back]]	route del default gw 192.168.0.1 route add default gw 192.168.0.2 ip route del default ip route add default via 192.168.0.2
+change the mac adr of the interface enp0s3 (2 ways) [[typebox:Back]]	ifconfig enp0s3 down ifconfig enp0s3 hw ether 00:03:27:51:45:34 ifconfig enp0s3 up ip link set dev enp0s3 address 00:03:27:51:45:34
 ... is the default network management tool [[typebox:Back]]	netplan
 netplan tool uses ... file that are located to ... [[typebox:Back]]	yaml /etc/netplan
-Netplan support 2 ... to control networking interfaces. ... (used mostly on ...)  and ... (used on ...) [[typebox:Back]]	renderers backend services network manager (desktop machines)  and systemd-networkd (server without GUI)
+Netplan support 2 ... to control networking interfaces. ... (used mostly on ...) and ... (used on ...) [[typebox:Back]]	renderers backend services network manager (desktop machines) and systemd-networkd (server without GUI)
 the network interface can be managed either by ... either by ..., but ... [[typebox:Back]]	network manager systemd-networkd not by both of them at a same time
 Stop NetworkManager service [[typebox:Back]]	systemctl stop NetworkManager
-disable NetworkManager service, so it won't start after a restart [[typebox:Back]]	systemctl disable NetworkManager
+"disable NetworkManager service, so it won't start after a restart [[typebox:Back]]"	systemctl disable NetworkManager
 check the status of NetworkManager [[typebox:Back]]	systemctl status NetworkManager
 check if NetworkManager is enabled for the boot [[typebox:Back]]	systemctl is-enabled NetworkManager
-"Description of this netplan yaml file : network:   version: 2   renderer: networkd   ethernets:     enp0s3:       dhcp4: false       addresses:         - 192.168.0.20/24       gateway4: ""192.168.0.1""       nameservers:         addresses:           - ""8.8.8.8""           - ""8.8.4.4""  [[typebox:Back]]"	each file always start with the 'network' keyword Then, at least 3 required elements : - the version of the network configuration format - the renderer - the device type
+"Description of this netplan yaml file : network: version: 2 renderer: networkd ethernets: enp0s3: dhcp4: false addresses: - 192.168.0.20/24 gateway4: ""192.168.0.1"" nameservers: addresses: - ""8.8.8.8"" - ""8.8.4.4"" [[typebox:Back]]"	"each file always start with the 'network' keyword Then, at least 3 required elements : - the version of the network configuration format - the renderer - the device type"
 apply changes after updated the netplan config file [[typebox:Back]]	netplan apply
 Yaml use ... for indentation [[typebox:Back]]	two spaces
-... is useful for testing and troubleshooting the network connectivity  [[typebox:Back]]	ping
+... is useful for testing and troubleshooting the network connectivity [[typebox:Back]]	ping
 an ip address can be set to ... [[typebox:Back]]	multiple differents domain names
 ping ubuntu.com by avoiding the dns resolution name [[typebox:Back]]	ping ubuntu.com -n
 by default, ping wait .... before sending each packet [[typebox:Back]]	1 second
@@ -40,7 +38,7 @@ send 5 ping to google.com with a delay of 0.3 seconds between each packet [[type
 send 5 ping to google.com by only displaying the summary [[typebox:Back]]	ping -q -c 5 google.com
 find the second router ip adr for the path of this command : ping -c 3 ubuntu.com [[typebox:Back]]	ping -t 2 -c 3 ubuntu.com
 SSH stands for [[typebox:Back]]	Secure Shell
-SSH protocol is used for :  -  -  - [[typebox:Back]]	- secure remote management of server, routers, networking devices - network file copy : rsync, scp, sftp, winscp - tunneling, ssh port forwarding
+SSH protocol is used for : - - - [[typebox:Back]]	- secure remote management of server, routers, networking devices - network file copy : rsync, scp, sftp, winscp - tunneling, ssh port forwarding
 ... is the ssh server (daemon) and ... or ... is the client [[typebox:Back]]	sshd ssh putty
 ssh installation cmd on ubuntu [[typebox:Back]]	sudo apt update && sudo apt install openssh-server openssh-client
 ssh installation command on CentOS [[typebox:Back]]	sudo dnf install openssh-server openssh-clients
@@ -50,7 +48,7 @@ check with ps and grep is ssh is running [[typebox:Back]]	ps -ef | grep ssh
 Check if the daemon of ssh is running by using ps and parameters [[typebox:Back]]	ps -ef | grep sshd
 SSH as vince user, connect to ssh server 192.168.1.88 with vbox user (2 ways) [[typebox:Back]]	ssh vbox@192.168.1.88 ssh -l vbox 192.168.1.88
 SSH the client uses a ... to identify the server and prevent possible ... in the future [[typebox:Back]]	cryptographical fingerprint man in the middle attack
-SSH the ... is randomly generated when the ... is set up and it is used to identify the server we are connecting to. it will be saved on the client in a file called ... in [[typebox:Back]]	host key ssh server no_host  ./ssh in user home directory
+SSH the ... is randomly generated when the ... is set up and it is used to identify the server we are connecting to. it will be saved on the client in a file called ... in [[typebox:Back]]	host key ssh server no_host ./ssh in user home directory
 SSH how disconnect to the server (2 ways) [[typebox:Back]]	exit ctrl d
 SSH default port [[typebox:Back]]	22
 SSH connect to 192.168.1.88 with vbox user on the port 22 [[typebox:Back]]	ssh -p 22 -l vbox 192.168.1.88
@@ -70,7 +68,7 @@ Centos file log [[typebox:Back]]	/var/log/secure
 open manual for sshd config file [[typebox:Back]]	man sshd_config
 FW add a rule enabling to filter access to sshd only for ip 2.2.4.5 on the port 2276 [[typebox:Back]]	iptables -A INPUT -p tcp --dport 2276 -s 2.2.4.5 -j ACCEPT iptables -A INPUT -p tcp --dport 2276 -j DROP
 ... copy files over the network using ssh [[typebox:Back]]	scp
-scp can be used in 3 differents ways :  [[typebox:Back]]	- copy from a computer to a remote server - copy from a remote server to a computer - copy from a remote server to another remote server (in this case, data are transferred directly between servers)
+scp can be used in 3 differents ways : [[typebox:Back]]	- copy from a computer to a remote server - copy from a remote server to a computer - copy from a remote server to another remote server (in this case, data are transferred directly between servers)
 copy ip.txt file on server 192.168.1.88 with user vince with the default ssh listening port in the home directory of the user by default [[typebox:Back]]	scp -P 22 ip.txt vince@192.168.1.88:~
 copy ip.txt file on server 192.168.1.88 with user vince with the default ssh listening port in the home directory of the user by default RENAME THE FILE ipcopy.txt [[typebox:Back]]	scp -P 22 ip.txt vince@192.168.1.88:~/ipcopy.txt
 copy local Devices directory on server 192.168.1.88 with user vince with the default ssh listening port in the home directory of the user by default [[typebox:Back]]	scp -r -P 22 Devices/ vince@192.168.1.88:~
@@ -88,14 +86,10 @@ rsync do by default ... copy [[typebox:Back]]	incremental
 make a backup of /etc by creating a new directory /etcbkp in the home user directory with verbose mode and EXACT MIRRORING if some files are deleted in the source [[typebox:Back]]	sudo rsync -av --delete /etc/ ~/etcbkp/
 ... doesnt matter. /etc equals /etc/ [[typebox:Back]]	trailing slashs
 with rsync, ... means the content of the directory will be copied. if the ... is omitted, a new directory will be copied [[typebox:Back]]	trailing slash
-make a backup of /etc by creating a new directory /etcbkp in the home user directory with verbose mode by excluding the directory dir1 and all mkv files (2 steps) [[typebox:Back]]	create a file 'excludefiles.txt' including :  dir1/ *.mkv rsync -av --exclude-from='home/vince/excludefile.txt' /etc/ ~/etcbkp/
+make a backup of /etc by creating a new directory /etcbkp in the home user directory with verbose mode by excluding the directory dir1 and all mkv files (2 steps) [[typebox:Back]]	"create a file 'excludefiles.txt' including : dir1/ *.mkv rsync -av --exclude-from='home/vince/excludefile.txt' /etc/ ~/etcbkp/"
 it is recommended to always use ... paths with rsync [[typebox:Back]]	absolute
-copy my_project/ content to backup/ by excluding png files and test.pdf file [[typebox:Back]]	rsync -av --exclude='*.png' --exclude='test.pdf' my_project/ backup/
-make a sync / backup of source /etc/ to the server 192.168.0.20 as student user on the /etc-centos directory [[typebox:Back]]	sudo rsync -av -e ssh /etc/ student@192.168.0.20:~/etc-centos/
-make a sync / backup of source /etc/ to the server 192.168.0.20 as student user on the /etc-centos directory WITH MIRRORRING [[typebox:Back]]	sudo rsync -av -e ssh --delete /etc/ student@192.168.0.20:~/etc-centos/
-make a sync / backup of source /etc/ to the server 192.168.0.20 as student user on the /etc-centos directory WITH MIRRORRING and by specifying the port 22 [[typebox:Back]]	sudo rsync -av -e 'ssh -p 22' /etc/ student@192.168.0.20:~/etc-centos/
-make a sync / backup of directory source /my_project from the server 192.168.0.20 as student user to the current directory WITH MIRRORRING [[typebox:Back]]	rsync -av -e ssh student@192.168.0.20:~/my_project .
-wget download the file in the ... [[typebox:Back]]	current directory
-download a url iso image and put it in the folder kali/ [[typebox:Back]]	wget -P kali/ url
-by default wget consume as much ... as it can [[typebox:Back]]	bandwith
-download an url by limiting the download speed to 100k [[typebox:Back]]	wget --limit-rate=100k url
+copy my_project/ content to backup/ by excluding png files and test.pdf file [[typebox:Back]]	"rsync -av --exclude='*.png' --exclude='test.pdf' my_project/ backup/"
+download a file from the web with the ability to resume the download later [[typebox:Back]]	wget -c url
+download two files at a same time (2 steps) [[typebox:Back]]	put download links in a file wget -i file.txt
+download a file and running in the background [[typebox:Back]]	wget -b url
+check the status of a download after launch it in background [[typebox:Back]]	tail -f logfile
