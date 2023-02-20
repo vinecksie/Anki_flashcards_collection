@@ -1,0 +1,11 @@
+A ... is a package that contains an executable as opposed to ... [[typebox:Back]]	A ... is a package that contains an executable as opposed to ... [[typebox:Back]]
+.. is the installation package format user by all debian based distributions [[typebox:Back]]	.. is the installation package format user by all debian based distributions [[typebox:Back]]
+a ... is an archive that contains other files including the executable application that was already compiled [[typebox:Back]]	a ... is an archive that contains other files including the executable application that was already compiled [[typebox:Back]]
+... provides the low level infrastructure for package management [[typebox:Back]]	... provides the low level infrastructure for package management [[typebox:Back]]
+the ... provides the list of current packages installed on the system [[typebox:Back]]	the ... provides the list of current packages installed on the system [[typebox:Back]]
+"dpkg can work with ... and does not about ... and ... compared to 'apt' [[typebox:Back]]"	"dpkg can work with ... and does not about ... and ... compared to 'apt' [[typebox:Back]]"
+"'apt' will call ... behind the scenes [[typebox:Back]]"	"'apt' will call ... behind the scenes [[typebox:Back]]"
+list informations about the chrome.deb file [[typebox:Back]]	list informations about the chrome.deb file [[typebox:Back]]
+install the chrome.deb package [[typebox:Back]]	install the chrome.deb package [[typebox:Back]]
+get a list of all installed deb packages [[typebox:Back]]	get a list of all installed deb packages [[typebox:Back]]
+get a list of all installed deb package with the version, architecture and description [[typebox:Back]]	get a list of all installed deb package with the version, architecture and description [[typebox:Back]]
