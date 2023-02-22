@@ -21,3 +21,26 @@ In the newest version of Ubuntu, ... and ... were merger in ...	apt-get apt-cach
 an APT repository is an ... which contains a collection of ... with ... that is readable by the apt tool	web server packages with metadata
 ... are a special kind of repository hosted on servers (... is an example)	PPAs Launchpad
 PPAs stands for ...	Personal Package Archive
+apt uses a ... or a ... that ... of available packages from the repositories enabled in the system	index local database hold records
+update the packages index of apt	sudo apt update
+it is recommended to update apt packages index by running ... before each time before .... or ... new packages	apt update installing upgrading
+".... command doesn't install or update any applications. it just update an ..."	apt update command index
+install a new program	apt install programname
+install the deb fil chrome located in download of user vbox with apt	apt install /home/vbox/Downloads/chrome.deb
+get a list of all packages that can be upgraded	apt list --upgradable
+upgrade the entire system	apt full-upgrade
+run upgrade entire system in a shell script	sudo apt full-upgrade -y
+remove an installed package	apt remove packagename
+uninstall the apache2 package and its configuration files	sudo apt purge apache2
+"when you remove or purge a package, the ... won't be removed automatically"	dependencies
+remove all unneeded dependencies	sudo apt autoremove
+by default ubuntu keep all ... in a cache directory on the disk	packages that has been downloaded and installed
+list elements of cache directory of apt	ls -l /var/cache/apt/archives/
+check size of apt cache directory	du -sh /var/cache/apt/archives/
+clear the cache repo of apt	sudo apt clean
+list all availlable packages	apt list
+show the number of available packages	apt list | wc -l
+"find all packages containing ""transparent proxy"" in the name"	"apt search ""transparent proxy"""
+list all installed packages	apt list --installed
+number of packages installed	apt list --installed | wc -l
+show informations on a package	apt show packagename
