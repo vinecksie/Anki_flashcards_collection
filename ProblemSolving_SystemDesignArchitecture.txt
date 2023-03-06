@@ -1,0 +1,41 @@
+components of a complete architecture :	browser load balancer web server job server queue services database caching service data warehouse data hose cloud storage cdn dns
+BROWSER / CLIENT examples	chrome safari enable to access to websites facebook app is more direct way to access to a website
+BROWSER / CLIENT browser does not have ... directly it has to make a ... to a ... for gettings files and ... we want to access	files of website request web server build the website
+BROWSER / CLIENT when the web server receives the request, it will ... that are typically ... files that the browser need to use in order to build the website	send back the response with appropriate files js html css
+DNS stands for	domain name system
+DNS when you send a human readable website address to a dns, it sends back to you an .... for accessing to this website	unique address
+DNS for one website name, you could have millions of .... behind	ip addresses
+DNS Millions of potentials ...in the world can hose needed files to build a website	web servers
+DNS a website does not necessarely need to have .... ip address	only one
+DNS user dont care about ..., they know only the ...	ip address giving the file to build the website website name
+DNS role is to receive ... and figure out which ... the user need to build the website	the name of a website ip address
+DNS ... and ... are specific format of ip addresses dns has to maintain ... ... or ... choose to request the ipv4 or the ipv6 address	ipv4 4.29 . 10.9 ipv6 3.4 . 10.38 both of them browser or sender
+... and ... are typical part of facebook system ..., ... and ... are part of client system	load balancer and web server browser, dns and cdn
+WEB / APPLICATION SERVER server that ... and send back ... to build a website or a portion of the website	take some requests appropriate files
+WEB / APPLICATION SERVER it allows to run some ... and a ... in order to deliver for instance some json files to update facebook posts in a browser	application logic (code written by developers whatever the language) database
+WEB / APPLICATION SERVER application logic gonna try to apply some ... on some ... stored in database	transformations, steps specific data like post data in FB example
+WEB / APPLICATION SERVER server need to consumes ... to run : .. .. .. ..	resources storage memory processing power network speed
+WEB / APPLICATION SERVER the more traffic you have the more ....	resources you consume
+... is the fact to increase the capacity of a server you have two types of scaling : ... and ...	scaling vertical scaling (increase amount of ressources of the server) horizontal scaling (duplicate/clone the actual web server virtually)
+LOAD BALANCER horizontal scaling : clone only the application logic and the serverm NOT ... ... live outside from the web server ... live inside the web server	THE DB the database the application logic
+LOAD BALANCER horizontal scaling, one ... connect to all cloned server	db
+LOAD BALANCER latency is ...	the time it takes for make a request and get an answer from the server
+load balancer distribute the ... between the servers available	amount of requests
+LOAD BALANCER distributes the ... between ...	load of requests the servers availables
+LOAD BALANCER it acts as the ... of the ...	entry point application space
+LOAD BALANCER ... is a very typical strategy for distribute the load. it send the coming requests to ...	round robin the next server available in the list
+LOAD BALANCER session persistence is the fact to ... we cannot jump between .... and a client session	keep a communication between a client and a server multiple server
+DB role is to ...	store and retrieve data
+DB ... is necessary because millions of same request will be performed and this concept will ensure to avoid the latency between the database and the web server	caching service
+CACHING a caching service and a database both ...	store data
+CACHING it prioritize the ... over the ...	speed of retrieving data amount of data stored
+JOB SERVER contains ... logic, whereas web server contains business logic	application
+JOB SERVER process the logic that is not ... driven	user
+JOB SERVER a job is a ...	one unit of work
+JOB SERVER it process all the request .... of the user interaction, like the newsfeed example	independently
+JOB QUEUE ... is an example	cron jobs
+SERVICE .... are examples	authentication, newsfeed, messenger, communities
+SERVICE is an ... system	independant
+SERVICE an .... contain several services like newsfeed service and authentication services for example	application system
+SERVICE is a project focusing on a ...	single responsibility
+SERVICE microservices architecture is ... and a service is a ...	building a system as a composition of small services self contained deliverable system
