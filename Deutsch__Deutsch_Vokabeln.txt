@@ -1,0 +1,249 @@
+diner	abendessen
+huit	acht
+80 90 100	achtzig neunzig einhundert
+repondre	antworten
+travailler	
+travailler	arbeiten
+sans emploi	arbeitslos
+au revoir	auf wiedersehen
+se lever	auf stehen
+programmes detudes a letranger	Auslandstudienprogramm
+à	bei
+couvert	bewölkt
+a bientot	bis bald
+svp	bitte
+yeux bleus	blaue augen
+blond	blond
+yeux marrons	braune Augen
+la-bas derriere	da hinten
+la bas	
+devant	da vorne
+le bebe	das baby
+le champ	das feld
+la date de naissance	das Geburtsdatum
+le piano	
+le piano	das Klavier
+le musee	das Museum
+le saxofon	das Saxofon
+la batterie	das Schlagzeug
+le weekend	das Wochenende
+le salon	das Wohnzimmer
+bien a toi	Dein...Deine
+ton frere	dein Bruder
+ta soeur	deine Schwester
+la lettre	der Brief
+lenseignant lenseignante en maternelle	der Erzieher die Erzieherein
+printemps	der Frühling
+le lieu de naissance	das Geburtsort
+lautomne	der Herbst
+linformaticien linformaticienne	der Informatiker die Informatikerin
+lingenieur lingenieure	der Ingenieur die Ingenieurien
+linfirmier linfirmiere	der Krankenpfleger die Krankenpflegerin
+lhomme	der Mann
+le nom	der Nachname
+la place	der Platz
+le passeport	der Reisepass
+ete	der Sommer
+le jour	der Tag
+le prenom	der Vorname
+hiver	winter
+Allemagne	Deutschland
+le travail	dir Arbeit
+lemail	die E-mail
+la flute	die Flöte
+la femme	die Frau
+le temps libre	die Freizeit
+le violon	die Geige
+la guitare	die Gitarre
+les donnees personnelles	die Personalien
+la soeur	die Schwester
+la rue	die Straße
+le numero de tel	die Telefonnummer
+la trompette	die Trompete
+la semaine	die Woche
+trois	drei
+treize quatorze quinze	dreizehn vierzehn fünfzehn
+trente quarante cinquante	dreißig vierzig fünfzig
+tu es	du bist
+tu as	du hast
+tu viens dAllemagne	du kommst aus Deutschland
+tu parles	du sprichst
+prendre une douche	duschen
+avoir le droit	dürfen
+un peu	ein bisschen
+jouer dun instrument	instrument spielen
+faire les courses	einkaufen
+un	eins
+onze douze	elf zwölf
+emotif	emotional
+anglais	Englisch
+desole excusez moi	Entschuldigung
+se detendre	entspannen
+il	er
+il est	er ist
+il elle (neutre)	es
+il est (neutre)	es ist
+il est ....heures	es ist ....Uhr
+il pleut	es regnet
+manger	essen
+extremement	extrem
+conduire	fahren
+conduire conduit	fahren gefahren
+faire du velo	fahrrad fahren
+regarder la tv	fernsehen
+vendredi samedi dimanche	freitage samstag sonntag
+retrouver des amis	Freunde treffen
+enchante aussi	freut mich auch
+prendre son petit dej	frühstücken
+jouer au football	football spielen
+cinq	fünf
+en face de	gegenüber
+appartenir	gehören
+tout droit	geradeaus
+bon bonne	gut
+bien merci	gut danke
+bonjour du matin	guten morgen
+bonjour formel	guten tag
+bon marche	günstig
+et demi	halb
+salut	hallo
+chaud	heiß
+aider	helfen
+lumineux	hell
+monsieur	Herr
+je travaille pour	ich arbeite bei
+je suis	ich bin
+je pense (personnellement) que	ich finde, dass
+je pense que, je crois que	ich glaube. dass
+jai	ich habe
+je mappelle Vincent	ich heiße Vincent
+je cherche un emploi de	ich such Arbeit als ...
+vous avez	ihr habt
+vous etes au pluriel	ihr seid
+vous pluriel etudiez	ihr studiert
+son pere	ihr Vater
+sa mere	ihre Mutter
+se coucher	ins Bett gehen
+aller a la salle de sport	ins Fitnessstudio gehen
+janvier fevrier	Januar Februar
+juillet aout	Juli August
+froid	kalt
+puis-je rentrer ?	kann ich reingehen ?
+pas de probleme	Kein Problem
+venir venu	kommen gekommen
+cheveux courts	Kurze Haare
+etre capable de	können
+cheveux longs	lange Haare
+marcher	laufen
+leger	leicht
+lire	lesen
+Chere Cher	Liebe ... Lieber
+Cordialement	Liebe Grüße
+gauche	links
+mai juin	mai juni
+mon pere	mein Vater
+ma mere	meine Mutter
+je vais bien	"Mir geht's gut"
+ca ne va pas bien	"mir geht's schlecht"
+je vais tres bien	"mir geht's super"
+avec	mit
+Je vous prie dagreer mme msieur lexpression de mes salutations distinguees	Mit freundlichen Grüßen
+mercredi jeudi	mittwoch donnerstag
+lundi mardi	montag dienstag
+mars avril	märz april
+aimer souhaiter	mögen
+devoir avoir besoin de	müssen
+brumeux	neblig
+non	nein
+enervant	nervig
+neuf	neun
+novembre decembre	november december
+zero	null
+Pologne	Polen
+droite	rechts
+plutot	relativ
+calme	ruhig
+la Russie	Russland
+mauvais	schlecht
+gouter	schmecken
+cheveux noirs	Schwarze Haare
+lourd lourde	schwer
+nager	schwimmen
+bonne journee	schönen Tag
+bon weekend	schönes wochenende
+six	sechs
+seize dix sept dix huit dix neuf	sechszehn siebzehn achtzhen neunzehn
+soixante soixante dix	sechzig siebzig
+faire de la voile	segeln
+tres	sehr
+madame monsieur	sehr geehrte Frau...sehr geehrter Herr
+son frere	sein Bruder
+sa soeur	seine Schwester
+septembre octobre	september october
+shabiller	sich anziehen
+se depecher	sich beeilen
+se brosser les cheveux	sich die Haare bürsten
+se laler les dents	sich die Zähne putzen
+se detendre	sich erholen
+se raser	sich rasieren
+se maquiller	sich schmincken
+elle	sie
+ils ont	sie haben
+elle est	sie ist
+ils elles sont	sie ist
+ils elles etudient	sie studieren
+sept	sieben
+chanter	singen
+ski	ski fahren
+etre cense	sollen
+ensolleile	sonnig
+espagne	Spanien
+faire du sport	Sport treiben
+sportif	sportlich
+parler	sprechen
+etudier	studieren
+orageux	stürmisch
+chercher	suchen
+sympathique	sympathisch
+danser	tanzen
+cher chere	teuer
+au revoir	tschüss
+la turquie	Türkei
+et toi ?	und dir ?
+pas sportif	unsportlich
+antipathique	unsympatisch
+se reveiller en retard	verschlafen
+quatre	vier
+un quart	viertel nach
+moins le quart	viertel vor
+jouer au volley	volleyball spielen
+lire a voix haute	vorlesen
+faire une randonnee	wandern
+chaud 2	warm
+que fais tu dans la vie ?	was bist du von Beruf ?
+parce que	weil
+quelles langues parle tu ?	welche Sprachen sprichst du ?
+pardon ?	wie bitte ?
+comment ca va ?	"wie geht's ?"
+comment tappelles tu ?	wie heißt du ?
+quel temps fait il ?	wie is das Wetter ?
+a quoi ressembles tu ?	wie siehst du aus ?
+quelle heure est il ?	wie spät ist es ?
+venteux	windig
+nous avons	wir haben
+nous sommes	wir sind
+oú	wo
+doú viens tu ?	woher kommst du ?
+vivre habiter	wohnen
+vouloir	wollen
+dix	zehn
+á pour	zu
+aller travailler	zur Arbeit gehen
+vingt vingt et un vingt deux	zwanzig einundzwanzig zweiundzwanzig
+deux	zwei
+200 300 400	zweihundert dreiundert vierhundert
+bientôt	bald
+demain	morgen
+la semaine prochaine	nächste woche
+plus tard	später
+apres demain	übermorgen
