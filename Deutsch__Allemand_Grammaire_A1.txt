@@ -4,3 +4,30 @@ pronoms possessif das Buch adjectif possessif (lecon precedente) : das ist mein 
 Le nominatif est utilisé par le ... qui ... dans une phrase	"sujet fait / est en train de faire l'action"
 "accusatif : lorsque .... (...) est .... par l'action"	"quelque chose, quelqu'un (l'objet direct) affecté"
 "accusatif : seul l'orthographe des articles .... change. der (nom.) >>> ... (acc.) ein (nom.) >>> ... (acc.)"	masculins den einen
+.... indique que quelque chose existe a un certain endroit	es gibt
+contruction de es gibt : ... + ... es gibt signifie ...	es (neutre) + geben (donner) il y a
+Il y a 2 supermarchés dans ma ville Y a-t-il une pharmacie ici ?	Es gibt zwei Supermärkte in meiner Stadt Gibt es hier eine Apotheke ?
+es gibst est toujours suivi de ....	"l'accusatif"
+"Il n'y a pas de supermarchés dans mon village"	Es gibt keinen Supermarkt in meinem Dorf
+Le datif représente lobjet ... qui est ...	"indirect affecté par l'action"
+Datif construction	sujet + verbe + object indirect + objet direct
+"Datif der (nom) den (acc) ... (datif) die (nom) die (acc) ... (datif) das (nom) den (acc) ... (datif) PLURIEL derie (nom) die (acc) ... (datif) ein (nom) einen (acc) ... (datif) eine (nom) eine (acc) ... (datif) ein (nom) ein (acc) ... (datif) Il achete une glace a l'enfant"	dem der dem den einem einer einem Er kauft dem Kind ein Eis
+IMPERATIF construction du : ihr : Sie :	"du : supprimer du + supprimer 'st' de la conjuguaison ihr : supprimer ihr de la conjuguaison Sie : placer 'Sie' APRES la conjuguaison"
+IMPERATIF forme polie	imperatif + bitte
+"PREPOSITIONS toujours suivies de ... par / á travers (je traverse le parc) pour contre sans á / vers (Le magasin est au coin de la rue) jusqu'á / vers (Elle reste dans le café jusqu'á ce que la pluie s'arrête)"	"PREPOSITIONS toujours suivies de L'ACCUSATIF durch (Ich laufe durch dem Park) für gegen ohne um (Der Laden ist gleich um die Ecke) bis (Sie bleibt im Café bis der Regen aufhört)"
+Les prépositions sont toujours suivies par ...	"l'objet de la phrase"
+"construction question simple est-ce qu'il fait mauvais ?"	verbe sujet objet ? Ist das Wetter schlecht ?
+"PLURIEL larticle determiné devient ... aux cas ... et .... masculin, terminaison : ... les amis, les travaux féminin, terminaison : ... les sacs. les femmes exemples d'exceptions : les pères, les mères, les jus, les livres"	die nomimatif et accusatif e die Freunde, die Berufe n, en, nen die Taschen, die Frauen die Väter, die Mütter, die Säfte. die Bücher
+conjuguer travailler	arbeiten ich arbeite du arbeitest er sie es arbeitet wir arbeiten ihr arbeitet sie Sie arbeiten
+exemple de verbe irregulier conduire marcher lire manger	fahren laufen lesen essen
+verbes irreguliers seul les terminaisons au present sont les memes mais les ... de la racine changent et UNIQUEMENT POUR ... ET ... : a >>> ... exemple : au >>> ... exemple : o >>> ... exemple : e long >>> ... exemple : e court >>> ... exemple :	voyelles du ET er sie es : a >>> ä fahren au >>> äu laufen o >>> ö stoßen e long >>> ie sehen e court >>> i helfen
+verbes irregulier conjugue fahren	ich fahre du fährst er sie es fährt wir fahren ihr fahrt sie Sie fahren
+le verbe mögen a deux sens : ... et .... on utilise le temps ... pour le premier et ... pour le second bien que linfinitif soit identique, les formes verbales sont donc differents en fonction du sens : jaime la pizza je souhaiterais manger une pizza	aimer qch Indikativ souhaiter qch Konjunktiv II ich mag pizza ich möchte pizza essen
+verbes modaux conjugue aimer qch	ich mag du magst er sie es mag wir mögen ihr mögt sie Sie mögen
+verbes modaux conjuguer souhaiter qch	ich möchte du möchtest er sie es möchte wir möchten ihr möchtet sie Sie möchten
+verbes modaux construction aimer qch il aime le vin consturction souhaiter qch il souhaiterait boire du vin	sujet mögen objet er mag wein sujet mögen objet verbe infiinitif er möchte wein haben
+verbes modaux on peut utiliser ce verbe pour exprimer 3 choses : ... conjugue vouloir Ils veulent aller en randonnee ce weekend veux tu aller au cinema avec moi ?	exprimer un projet futur faire des plans avec qqun exiger qch wollen ich will du willst er sie es will wir wollen ihr wollt sie Sie wollen Sie wollen am Wochenende wandern Willst du mit mir ins Kino gehen ?
+"verbes modaux rendre souhaite encore plus chaleureux : je souhaiterai un verre d'eau s'il vous plaît"	Ich möchte bitte ein Glas Wasser haben.
+"les verbes modaux modifient .... Ils impliquent 4 choses : ... On utilise generalement les verbes modaux avec le ... utilisé à l'infinitif et placé en fin de phrase : je sais jouer au football mon chien a le droit de dormir dans le lit traduire : être capable de avoir le droit devoir, avoir besoin de aimer au conditionnel vouloir être censé, falloir"	"l'action dans la phrase la capacité, la possibilité, la probabilité, l'obligation verbe principal ich kan Fußball spielen Mein Hund darf im Bett schlafen können dürfen müssen mögen wollen sollen"
+conjuguer les verbes modaux être capable de, avoir le droit et devoir	können ich kann du kannst er kann wir können ihr könnt sie können dürfen ich darf du darfst er darf wir dürfen ihr dürft sie dürfen müssen ich muss du musst er muss wie müssen ihr müsst sie müssen
+"Verbes à particules séparables construction : ... se lever a quelle heure te leves tu ? faire les courses paul doit faire les courses regarder la tv je regarde la tv generalement la tv avec mes colocataires le soir lire à voix haute je lis a Sarah prépositions de lieux : de, avec, en arriere partir aller avec quelqu'un repartir ATTENTION tous les verbes avec prefixe ne sont pas des verbes separables, voici les 8 inseparables : ... décrire comprendre"	construction : sujet verbe objet préfixe aufstehen Wann stehst du auf ? einkaufen Paul muss einkaufen fernsehen Abends sehe ich normalerweise mit meinen Mitbewohnern fern vorlesen Ich lese Sarah etwas vor prépositions de lieux : ab, mit, zurück abfahren mitfahren zurückfahren ATTENTION be ent er ge hinter miss ver zer beschreiben verstehen
